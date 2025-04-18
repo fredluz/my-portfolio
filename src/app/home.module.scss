@@ -1,0 +1,41 @@
+/* Styles for the fixed About Me element on the Home page */
+.fixedAboutContainer {
+    position: fixed;
+    top: 50%; /* Center vertically */
+    right: 5vw; /* Position from the right edge */
+    transform: translateY(-50%);
+    z-index: 10;
+    display: none; /* Hidden by default */
+    align-items: center; /* Center items horizontally if needed */
+}
+
+/* Styles for the large circular avatar */
+.largeHomeAvatar {
+    width: 150px; /* Adjust size */
+    height: 150px; /* Adjust size */
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+    border: 3px solid var(--global-color-neutral-alpha-medium);
+    margin-bottom: 1rem; /* Space between avatar and button */
+    transition: transform 0.2s ease-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* Styles for the button below the avatar */
+.aboutButton {
+    /* Add specific button styles if needed, or rely on component defaults */
+    width: 100%; /* Make button width match avatar */
+    text-align: center;
+}
+
+/* Media query to show the element only on wide screens */
+@media (min-width: 1200px) {
+    .fixedAboutContainer {
+        display: flex; /* Use flex to enable column layout */
+        flex-direction: column; /* Stack avatar and button vertically */
+    }
+}

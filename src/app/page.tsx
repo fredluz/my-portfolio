@@ -7,6 +7,7 @@ import { baseURL, routes } from "@/app/resources";
 import { home, about, person, newsletter } from "@/app/resources/content";
 import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
+import styles from "./home.module.scss"; // Import home page styles
 
 export async function generateMetadata() {
   const title = home.title;
@@ -39,9 +40,25 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <Column maxWidth="m" gap="xl" horizontal="center">
-      <script
-        type="application/ld+json"
+    <> {/* Use Fragment to allow sibling elements */}
+      {/* Fixed About Me element for wide screens */}
+      <div className={styles.fixedAboutContainer}>
+        <Avatar
+          src={person.avatar}
+          className={styles.largeHomeAvatar}
+        />
+        <Button
+          href="/about"
+          label="About Me"
+          variant="secondary"
+          size="m"
+          className={styles.aboutButton}
+        />
+      </div>
+
+      <Column maxWidth="m" gap="xl" horizontal="center">
+        <script
+          type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -124,5 +141,6 @@ export default function Home() {
       <Projects range={[2]} />
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
     </Column>
+    </> // Close the fragment
   );
 }

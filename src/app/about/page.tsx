@@ -180,7 +180,7 @@ export default function About() {
                     item.link && (
                         <>
                             <Button
-                                className={`s-flex-hide ${styles.hideOnWide}`}
+                                className="s-flex-hide"
                                 key={item.name}
                                 href={item.link}
                                 prefixIcon={item.icon}
@@ -201,21 +201,10 @@ export default function About() {
                 )}
               </Flex>
             )}
-            {/* Large About Me Avatar Button for wide screens */}
-            <div className={styles.largeAboutMeContainer}>
-              <a href={`#${about.intro.title}`} className={styles.largeAvatarLink}>
-                <Avatar
-                  src={person.avatar}
-                  // alt prop is not supported by this Avatar component
-                  className={styles.largeAvatarImage}
-                  // Size is controlled by the CSS class
-                />
-              </a>
-            </div>
           </Column>
 
           {about.intro.display && (
-            <Column id={about.intro.title} textVariant="body-default-l" fillWidth gap="m" marginBottom="xl"> {/* Ensure parent textVariant is set and ID is present */}
+            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl"> {/* Ensure parent textVariant is set */}
               {/* Render intro description with 'work' highlighted using dedicated CSS class (Attempt 17) */}
               <p> {/* Use a paragraph for block layout */}
                 Fred's an AI Agent Designer who's transforming the power of Large Language Models into intelligent software.
