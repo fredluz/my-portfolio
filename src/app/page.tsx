@@ -45,7 +45,8 @@ export default function Home() {
       <div className={styles.fixedAboutContainer}>
         <Avatar
           src={person.avatar}
-          className={styles.avatar}
+          className={styles.largeHomeAvatar}
+          size="xl" // Use the component's size prop
         />
         <Button
           href="/about"
