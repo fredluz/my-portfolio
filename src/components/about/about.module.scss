@@ -39,14 +39,28 @@
     transform: translateY(-50%);
     z-index: 10;
     display: none;
+    /* Adjust positioning slightly if needed */
 }
 
-.largeAboutMeButton {
-    font-size: 2rem;
-    padding: 2rem 3rem;
-    border-radius: 2rem;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+/* Styles for the large circular avatar button */
+.largeAvatarLink {
+    display: block; /* Ensure the link takes up space */
+    transition: transform 0.2s ease-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }
+
+.largeAvatarImage {
+    width: 200px; /* Adjust size as needed */
+    height: 200px; /* Adjust size as needed */
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+    border: 3px solid var(--global-color-neutral-alpha-medium); /* Optional border */
+}
+
 
 @media (min-width: 1200px) {
     .largeAboutMeContainer {
