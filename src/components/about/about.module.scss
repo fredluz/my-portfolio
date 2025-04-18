@@ -25,3 +25,8 @@
         align-self: center;
     }
 }
+
+/* Added class to force accent color */
+.forceAccentColor {
+    color: var(--function-accent-600) !important;
+}

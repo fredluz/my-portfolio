@@ -33,7 +33,7 @@ const social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/fredluz/",
+    link: "https://www.linkedin.com/in/fredericoluzai/",
   },
   {
     name: "X",
@@ -43,7 +43,7 @@ const social = [
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "mailto:fredericorodrigues2000@gmail.com",
   },
 ];
 
@@ -75,7 +75,7 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://cal.com/fredluz/30min",
   },
   intro: {
     display: true,
@@ -92,32 +92,7 @@ const about = {
     display: true, // set to false to hide this section
     title: "Project Highlights",
     experiences: [
-      {
-        company: "Narrative: Know Thyself",
-        role: "The Future of Journaling",
-        achievements: [
-           <>
-            An intelligent digital journal that uses an AI Agent to analyze entries, identify themes, and extract actionable tasks automatically.
-           </>,
-          <>
-            By keeping track of everything in a structured database, RAG allows the AI Agent to get the info it needs to understand where your life's at.
-            
-          </>,
-          <>
-            Focuses on seamless integration into a standard journaling UI, demonstrating the power of AI beyond chatbots for personal organization. Open Source.
-          </>,
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
+        {
         company: "TeacherZero: Speed + Quality",
         role: "Less Time Prepping, More Time Teaching",
         achievements: [
@@ -134,13 +109,64 @@ const about = {
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
+            src: "/images/projects/project-01/questiontype.png",
             alt: "Once UI Project",
             width: 16,
             height: 9,
           },
+          {
+            src: "/images/projects/project-01/teacherzero_demo.mp4",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
+          },
+         
         ],
       },
+      
+      {
+        company: "Narrative: Know Thyself",
+        role: "The Future of Journaling",
+        achievements: [
+           <>
+            An intelligent digital journal that uses an AI Agent to analyze entries, identify themes, and extract actionable tasks automatically.
+           </>,
+          <>
+            By keeping track of everything in a structured database, RAG allows the AI Agent to get the info it needs to understand where your life's at.
+          </>,
+          <>
+            Every life's just a story: time to write your own. The power of AI storytelling allows us to move beyond Gamification, and unlock Narrativization.
+          </>,
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/kanban and tasklist.png",
+            alt: "Once UI Project",
+            width: 9,
+            height: 16,
+          },
+          {
+            src: "/images/projects/project-01/chat1.png",
+            alt: "Once UI Project",
+            width: 3,
+            height: 4,
+          },
+          {
+            src: "/images/projects/project-01/chat2.png",
+            alt: "Once UI Project",
+            width: 4,
+            height: 4,
+          },
+          {
+            src: "/images/projects/project-01/chat3.png",
+            alt: "Once UI Project",
+            width: 4,
+            height: 3,
+          },
+        ],
+      },
+    
        {
         company: "(Coming Soon) Cascade: Beyond Tickets ",
         role: "Intelligent Team Orchestration",
@@ -179,33 +205,13 @@ const about = {
         title: "AI Agent & LLM Integration",
         description: <>Designing and implementing autonomous agents, leveraging RAG techniques, and integrating major LLM APIs (OpenAI, etc.) to build truly intelligent applications.</>,
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        
       },
       {
         title: "TypeScript & React",
         description: <>Crafting robust, scalable frontends and business logic. Building the intuitive interfaces where AI does its work.</>,
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+       
       },
       {
         title: "Google Cloud Platform",

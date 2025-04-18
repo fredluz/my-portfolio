@@ -12,7 +12,7 @@ import {
 } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import TableOfContents from "@/components/about/TableOfContents";
-import styles from "@/components/about/about.module.scss";
+import styles from "@/components/about/about.module.scss"; // Import styles
 import { person, about, social } from "@/app/resources/content";
 
 export async function generateMetadata() {
@@ -204,17 +204,17 @@ export default function About() {
           </Column>
 
           {about.intro.display && (
-            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
-              {/* Render intro description with 'work' highlighted using span + class */}
-              <>
+            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl"> {/* Ensure parent textVariant is set */}
+              {/* Render intro description with 'work' highlighted using dedicated CSS class (Attempt 17) */}
+              <p> {/* Use a paragraph for block layout */}
                 Fred's an AI Agent Designer who's transforming the power of Large Language Models into intelligent software.
                 AI shouldn't just talk, it should{' '}
-                <Text className="accent-on-background-strong"> {/* Use span + class */}
+                <span className={styles.forceAccentColor}> {/* Use dedicated CSS class */}
                   work
-                </Text>
+                </span>
                 . <br />
-                His work focuses on building effective AI agents (TypeScript/React/GCP) and integrating LLMs seamlessly into intuitive interfaces, moving beyond chatbots to solve real-world problems.
-              </>
+                He's focusing on building effective AI agents (TypeScript/React/GCP) and integrating LLMs seamlessly into intuitive interfaces, moving beyond chatbots to solve real-world problems.
+              </p>
             </Column>
           )}
 
