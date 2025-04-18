@@ -45,7 +45,7 @@ export default function Home() {
       <div className={styles.fixedAboutContainer}>
         <Avatar
           src={person.avatar}
-          className={styles.largeHomeAvatar}
+          className={styles.avatar}
         />
         <Button
           href="/about"
