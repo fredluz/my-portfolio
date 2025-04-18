@@ -205,7 +205,16 @@ export default function About() {
 
           {about.intro.display && (
             <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
-              {about.intro.description}
+              {/* Render intro description with 'work' highlighted using span + class */}
+              <>
+                Fred's an AI Agent Designer who's transforming the power of Large Language Models into intelligent software.
+                AI shouldn't just talk, it should{' '}
+                <Text className="accent-on-background-strong"> {/* Use span + class */}
+                  work
+                </Text>
+                . <br />
+                His work focuses on building effective AI agents (TypeScript/React/GCP) and integrating LLMs seamlessly into intuitive interfaces, moving beyond chatbots to solve real-world problems.
+              </>
             </Column>
           )}
 

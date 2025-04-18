@@ -1,24 +1,23 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Frederico",
+  lastName: "Luz",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
+  role: "AI Agent Designer",
   avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  location: "Europe/Lisbon", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: [] // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Subscribe to My Newsletter</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      I occasionally write about technology and it's impact on society. Penny for my thoughts?
     </>
   ),
 };
@@ -29,12 +28,12 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/fredluz",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/fredluz/",
   },
   {
     name: "X",
@@ -52,12 +51,14 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  headline: <>Freeing AI from the chatbot</>,
   subline: (
-    <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
-    </>
+<>
+      I'm Fred, an AI Agent Designer who makes using AI intuitive, easy and fast.
+      <br /> My work focuses on implementing Large Language Models in professional and personal workflows. 
+     <br/> {''}
+            My goal is to integrate AI into our daily lives, and make its capabilities part of our routines.
+          </>
   ),
 };
 
@@ -81,28 +82,29 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Fred's an AI Agent Designer who's transforming the power of Large Language Models into intelligent software.
+        AI shouldn't just talk, it should *work*. <br />
+        His work focuses on building effective AI agents (TypeScript/React/GCP) and integrating LLMs seamlessly into intuitive interfaces, moving beyond toy chatbots to solve real-world problems.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Project Highlights",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Narrative: Know Thyself",
+        role: "The Future of Journaling",
         achievements: [
+           <>
+            An intelligent digital journal that uses an AI Agent to analyze entries, identify themes, and extract actionable tasks automatically.
+           </>,
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            By keeping track of everything in a structured database, RAG allows the AI Agent to get the info it needs to understand where your life's at.
+            
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Focuses on seamless integration into a standard journaling UI, demonstrating the power of AI beyond chatbots for personal organization. Open Source.
           </>,
         ],
         images: [
@@ -116,25 +118,47 @@ const about = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "TeacherZero: Speed + Quality",
+        role: "Less Time Prepping, More Time Teaching",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Streamlines worksheet creation for teachers. Uses AI to generate relevant questions and exercises from source material.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Guarantees quality by keeping the teacher in the driver's seat. TeacherZero doesn't just generate quizzes, it turbo-charges perfecting them. Experience the Enhancement Engine.
           </>,
+           <>
+            Designed for ease of use, requiring no prompt engineering skills from teachers. Directly embeds AI into the workflow.
+          </>,
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/cover-01.jpg",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+       {
+        company: "(Coming Soon) Cascade: Beyond Tickets ",
+        role: "Intelligent Team Orchestration",
+        achievements: [
+          <>
+            Cascade leverages AI agents to transform team productivity. It provides a streamlined interface for task management while working intelligently behind the scenes.
+          </>,
+          <>
+             AI analyzes progress, identifies potential roadblocks, automates reporting, and provides leaders with concise, actionable insights – without manual data-digging or daily standups. 
+          </>,
+
         ],
         images: [],
       },
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: false, // set to false to hide this section
     title: "Studies",
     institutions: [
       {
@@ -152,8 +176,8 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        title: "AI Agent & LLM Integration",
+        description: <>Designing and implementing autonomous agents, leveraging RAG techniques, and integrating major LLM APIs (OpenAI, etc.) to build truly intelligent applications.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
@@ -171,8 +195,8 @@ const about = {
         ],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+        title: "TypeScript & React",
+        description: <>Crafting robust, scalable frontends and business logic. Building the intuitive interfaces where AI does its work.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
@@ -181,6 +205,13 @@ const about = {
             width: 16,
             height: 9,
           },
+        ],
+      },
+      {
+        title: "Google Cloud Platform",
+        description: <>Deploying and managing AI agents in the cloud.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
         ],
       },
     ],

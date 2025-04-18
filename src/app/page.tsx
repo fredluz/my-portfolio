@@ -70,8 +70,17 @@ export default function Home() {
             </Heading>
           </RevealFx>
           <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="m">
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
-              {home.subline}
+            {/* Render subline with the last sentence highlighted */}
+            <Text wrap="balance" onBackground="accent-strong" variant="heading-default-xl">
+              <>
+                I'm Fred, an AI Agent Designer who makes using AI   
+<Text wrap="balance" onBackground="brand-medium" variant="heading-default-xl"> intuitive</Text>, <Text wrap="balance" onBackground="brand-medium" variant="heading-default-xl">easy</Text> and <Text wrap="balance" onBackground="brand-medium" variant="heading-default-xl">fast</Text>.
+            
+                <br /> My work focuses on implementing Large Language Models in professional and personal workflows.
+                <br/>{' '}
+                
+                  My goal is to integrate AI into our daily lives, harnessing its power to level up our routines.
+              </>
             </Text>
           </RevealFx>
           <RevealFx translateY="12" delay={0.4} horizontal="start">
