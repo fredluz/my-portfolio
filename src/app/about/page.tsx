@@ -180,7 +180,7 @@ export default function About() {
                     item.link && (
                         <>
                             <Button
-                                className="s-flex-hide"
+                                className={`s-flex-hide ${styles.hideOnWide}`}
                                 key={item.name}
                                 href={item.link}
                                 prefixIcon={item.icon}
@@ -201,6 +201,16 @@ export default function About() {
                 )}
               </Flex>
             )}
+            {/* Large About Me Button for wide screens */}
+            <div className={styles.largeAboutMeContainer}>
+              <Button
+                className={styles.largeAboutMeButton}
+                href={about.intro.buttonLink || "#"}
+                label={about.intro.buttonLabel || "About Me"}
+                size="l"
+                variant="primary"
+              />
+            </div>
           </Column>
 
           {about.intro.display && (

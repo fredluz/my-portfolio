@@ -30,3 +30,29 @@
 .forceAccentColor {
     color: var(--function-accent-600) !important;
 }
+
+/* Large About Me Button styles for wide screens */
+.largeAboutMeContainer {
+    position: fixed;
+    top: 50%;
+    right: 5vw;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: none;
+}
+
+.largeAboutMeButton {
+    font-size: 2rem;
+    padding: 2rem 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+}
+
+@media (min-width: 1200px) {
+    .largeAboutMeContainer {
+        display: block;
+    }
+    .hideOnWide {
+        display: none !important;
+    }
+}
