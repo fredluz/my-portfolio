@@ -204,16 +204,19 @@ export default function About() {
           </Column>
 
           {about.intro.display && (
-            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl"> {/* Ensure parent textVariant is set */}
-              {/* Render intro description with 'work' highlighted using dedicated CSS class (Attempt 17) */}
-              <p> {/* Use a paragraph for block layout */}
+            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
+              <p>
                 Fred's an AI Agent Designer who's transforming the power of Large Language Models into intelligent software.
                 AI shouldn't just talk, it should{' '}
-                <span className={styles.forceAccentColor}> {/* Use dedicated CSS class */}
+                <span className={styles.forceAccentColor}>
                   work
                 </span>
                 . <br />
                 He's focusing on building effective AI agents (TypeScript/React/GCP) and integrating LLMs seamlessly into intuitive interfaces, moving beyond chatbots to solve real-world problems.
+                <br />
+                <span className={styles.forceAccentColor}>
+                  Talk to me if you're curious about how we can use AI to automate the worst part about your job.
+                </span>
               </p>
             </Column>
           )}
@@ -228,9 +231,9 @@ export default function About() {
                   <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
                     <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
                       <Text id={experience.company} variant="heading-strong-l">
-                        {experience.company === "TeacherZero: Speed + Quality" ? (
+                        {experience.company === "TeacherZero: Classroom Prep Made Easy" ? (
                           <a href="/work/teacherzero" style={{ textDecoration: "underline" }}>
-                            TeacherZero: Generate. Refine. Done.
+                            TeacherZero: Classroom Prep Made Easy
                           </a>
                         ) : experience.company === "Narrative: Know Thyself" ? (
                           <a href="/work/narrative" style={{ textDecoration: "underline" }}>
