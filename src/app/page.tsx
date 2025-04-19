@@ -94,10 +94,10 @@ export default function Home() {
                 I'm Fred, an AI Agent Designer who makes using AI   
 <Text wrap="balance" onBackground="brand-medium" variant="heading-default-xl"> intuitive</Text>, <Text wrap="balance" onBackground="brand-medium" variant="heading-default-xl">easy</Text> and <Text wrap="balance" onBackground="brand-medium" variant="heading-default-xl">fast</Text>.
             
-                <br /> My work focuses on implementing Large Language Models in professional and personal workflows.
+                <br /> My work focuses on implementing AI Agents in professional and personal workflows, making them fit into existing systems and interfaces.
                 <br/>{' '}
                 
-                  My goal is to integrate AI into our daily lives, harnessing its power to level up our routines.
+                  My goal is to integrate AI into our daily lives, harnessing its power to level up our routines.My core design philosophy is that AI should enhance workflows within our daily routines. No one should ever be forced to waste time with chatbots.
               </>
             </Text>
           </RevealFx>

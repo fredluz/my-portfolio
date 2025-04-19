@@ -212,7 +212,7 @@ export default function About() {
                   work
                 </span>
                 . <br />
-                My work focuses on building effective AI agents (TypeScript/React/GCP) and integrating LLMs seamlessly into intuitive interfaces, moving beyond toy chatbots to solve real-world problems.
+                My work focuses on building effective AI agents and integrating LLMs seamlessly into intuitive interfaces, moving beyond toy chatbots so we can solve real-world problems.
                 <br />
                 <a href="/contact" style={{ textDecoration: "underline" }}>
                   Talk to me if you're curious about how we can use AI to automate the worst part about your job.

@@ -57,7 +57,7 @@ const home = {
       I'm Fred, an AI Agent Designer who makes using AI intuitive, easy and fast.  <br />
     My work focuses on implementing AI Agents in professional and personal workflows, making them fit into existing systems and interfaces. 
      <br/> {''}
-         My core design philosophy is that AI should enhance workflows within our daily routines, instead of forcing users to waste time with chatbots.
+         My core design philosophy is that AI should enhance workflows within our daily routines. No one should ever be forced to waste time with chatbots.
           </>
   ),
 };
@@ -84,7 +84,7 @@ const about = {
       <>
         I'm turning the power of Large Language Models into intelligent software.
         AI shouldn't just talk, it should *work*. <br />
-        My work focuses on building effective AI agents (TypeScript/React/GCP) and integrating LLMs seamlessly into intuitive interfaces, moving beyond toy chatbots to solve real-world problems.<br/>
+        My work focuses on building effective AI agents and integrating LLMs seamlessly into intuitive interfaces, moving beyond toy chatbots so we can solve real-world problems.<br/>
         I'm always interested in learning about new workflows in new industries, and coming up with ways for AI to enhance them. Talk to me if you're curious about how we can use AI to automate the worst part about your job. <br />
       </>
     ),
