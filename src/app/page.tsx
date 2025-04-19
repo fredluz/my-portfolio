@@ -92,12 +92,12 @@ export default function Home() {
             <Text wrap="balance" onBackground="accent-strong" variant="heading-default-xl">
               <>
                 I'm Fred, an AI Agent Designer who makes using AI   
-<Text wrap="balance" onBackground="brand-medium" variant="heading-default-xl"> intuitive</Text>, <Text wrap="balance" onBackground="brand-medium" variant="heading-default-xl">easy</Text> and <Text wrap="balance" onBackground="brand-medium" variant="heading-default-xl">fast</Text>.
-            
-                <br /> My work focuses on implementing AI Agents in professional and personal workflows, making them fit into existing systems and interfaces.
-                <br/>{' '}
+<Text wrap="balance" color="accent-strong" onBackground="accent-medium" variant="heading-default-xl"> intuitive</Text>, <Text wrap="balance" onBackground="brand-medium" variant="heading-default-xl">easy</Text> and <Text wrap="balance" onBackground="brand-medium" variant="heading-default-xl">fast</Text>.
+              <br/>
+                <br /> AI tech is advancing extremely quickly, but it's still not being properly integrated into the real world. 
                 
-                  My goal is to integrate AI into our daily lives, harnessing its power to level up our routines.My core design philosophy is that AI should enhance workflows within our daily routines. No one should ever be forced to waste time with chatbots.
+                My goal is to integrate AI Agents into our daily lives, harnessing their power within our regular routines, systems and interfaces.
+                <br/><Text wrap="balance" color="accent-strong" onBackground="accent-medium" variant="heading-default-xl">  No one should be forced to waste time prompting chatbots ever again.</Text>
               </>
             </Text>
           </RevealFx>
