@@ -1,0 +1,10 @@
+.contactButton {
+  width: 100%;
+  transition: background var(--transition-micro-medium), color var(--transition-micro-medium), border-color var(--transition-micro-medium);
+
+  &:hover, &:focus {
+    background: var(--color-orange-600);
+    border-color: var(--color-orange-600);
+    color: var(--color-white);
+  }
+}

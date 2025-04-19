@@ -319,8 +319,8 @@ const gallery = {
 
 const contact = {
   label: "Contact",
-  title: "Contact Me",
-  description: "Get in touch with me",
+  title: "Let's talk",
+  description: "Get in touch so we can think about how to use AI to make your life easier. This isn't necessarily a sales pitch: even though I do want your business, I really am extremely curious about how AI can be implemented in current workflows.",
   items: [
     {
       name: "Schedule a Call",
@@ -328,7 +328,7 @@ const contact = {
       link: "https://cal.com/fredluz/30min"
     },
     {
-      name: "Email",
+      name: "Email - fredericorodrigues2000@gmail.com",
       icon: "email",
       link: "mailto:fredericorodrigues2000@gmail.com"
     },
