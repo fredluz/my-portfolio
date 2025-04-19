@@ -1,6 +1,6 @@
 import "@/once-ui/styles/index.scss";
 import "@/once-ui/tokens/index.scss";
-
+import {SpeedInsights} from '@vercel/speed-insights/next'
 import classNames from "classnames";
 
 import { Footer, Header, RouteGuard } from "@/components";
@@ -151,7 +151,9 @@ export default async function RootLayout({ children }: RootLayoutProps) {
             flex={1}
           >
             <Flex horizontal="center" fillWidth minHeight="0">
-              <RouteGuard>{children}</RouteGuard>
+              <RouteGuard>{children}
+              <SpeedInsights/>
+              </RouteGuard>
             </Flex>
           </Flex>
           <Footer />

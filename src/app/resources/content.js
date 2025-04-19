@@ -147,22 +147,8 @@ const about = {
             height: 16,
           },
           {
-            src: "/images/projects/project-01/chat1.png",
+            src: "/images/projects/project-01/checkups.png",
             alt: "Once UI Project",
-            width: 3,
-            height: 4,
-          },
-          {
-            src: "/images/projects/project-01/chat2.png",
-            alt: "Once UI Project",
-            width: 4,
-            height: 4,
-          },
-          {
-            src: "/images/projects/project-01/chat3.png",
-            alt: "Once UI Project",
-            width: 4,
-            height: 3,
           },
         ],
       },
