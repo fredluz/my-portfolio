@@ -317,4 +317,27 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+const contact = {
+  label: "Contact",
+  title: "Contact Me",
+  description: "Get in touch with me",
+  items: [
+    {
+      name: "Schedule a Call",
+      icon: "calendar",
+      link: "https://cal.com/fredluz/30min"
+    },
+    {
+      name: "Email",
+      icon: "email",
+      link: "mailto:fredericorodrigues2000@gmail.com"
+    },
+    {
+      name: "LinkedIn",
+      icon: "linkedin",
+      link: "https://www.linkedin.com/in/fredericoluzai/"
+    }
+  ]
+};
+
+export { person, social, newsletter, home, about, blog, work, gallery, contact };
