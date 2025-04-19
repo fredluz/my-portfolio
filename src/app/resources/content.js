@@ -93,8 +93,8 @@ const about = {
     title: "Project Highlights",
     experiences: [
         {
-        company: "TeacherZero: Speed + Quality",
-        role: "Less Time Prepping, More Time Teaching",
+        company: "TeacherZero: Classroom Prep Made Easy",
+        role: "Worksheets Without The Work",
         achievements: [
           <>
             Streamlines worksheet creation for teachers. Uses AI to generate relevant questions and exercises from source material.

@@ -228,7 +228,13 @@ export default function About() {
                   <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
                     <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
                       <Text id={experience.company} variant="heading-strong-l">
-                        {experience.company}
+                        {experience.company === "TeacherZero: Speed + Quality" ? (
+                          <a href="/work/teacherzero" style={{ textDecoration: "underline" }}>
+                            TeacherZero: Classroom Prep Made Easy
+                          </a>
+                        ) : (
+                          experience.company
+                        )}
                       </Text>
                       <Text variant="heading-default-xs" onBackground="neutral-weak">
                         {experience.timeframe}
