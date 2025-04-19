@@ -110,13 +110,13 @@ const about = {
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/questiontype.png",
+            src: "/images/projects/teacherzero/questiontype.png",
             alt: "Once UI Project",
             width: 16,
             height: 9,
           },
           {
-            src: "/images/projects/project-01/teacherzero_demo.mp4",
+            src: "/images/projects/teacherzero/teacherzero_demo.mp4",
             alt: "Once UI Project",
             width: 16,
             height: 9,
