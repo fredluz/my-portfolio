@@ -51,13 +51,13 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Freeing AI from the chatbot</>,
+  headline: <>Designing AI to be useful in the real world</>,
   subline: (
 <>
-      I'm Fred, an AI Agent Designer who makes using AI intuitive, easy and fast.
-      <br /> My work focuses on implementing Large Language Models in professional and personal workflows. 
+      I'm Fred, an AI Agent Designer who makes using AI intuitive, easy and fast.  <br />
+    My work focuses on implementing AI Agents in professional and personal workflows, making them fit into existing systems and interfaces. 
      <br/> {''}
-         My core design philosophy is that AI should enhance workflows *within* our daily routines, not force users to adopt radically new methods.
+         My core design philosophy is that AI should enhance workflows within our daily routines, instead of forcing users to waste time with chatbots.
           </>
   ),
 };
