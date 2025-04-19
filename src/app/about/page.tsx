@@ -206,17 +206,17 @@ export default function About() {
           {about.intro.display && (
             <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
               <p>
-                Fred's an AI Agent Designer who's transforming the power of Large Language Models into intelligent software.
+                I'm turning the power of Large Language Models into intelligent software.
                 AI shouldn't just talk, it should{' '}
                 <span className={styles.forceAccentColor}>
                   work
                 </span>
                 . <br />
-                He's focusing on building effective AI agents (TypeScript/React/GCP) and integrating LLMs seamlessly into intuitive interfaces, moving beyond chatbots to solve real-world problems.
+                My work focuses on building effective AI agents (TypeScript/React/GCP) and integrating LLMs seamlessly into intuitive interfaces, moving beyond toy chatbots to solve real-world problems.
                 <br />
-                <span className={styles.forceAccentColor}>
+                <a href="/contact" style={{ textDecoration: "underline" }}>
                   Talk to me if you're curious about how we can use AI to automate the worst part about your job.
-                </span>
+                </a>
               </p>
             </Column>
           )}
