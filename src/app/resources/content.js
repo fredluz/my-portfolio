@@ -57,7 +57,7 @@ const home = {
       I'm Fred, an AI Agent Designer who makes using AI intuitive, easy and fast.
       <br /> My work focuses on implementing Large Language Models in professional and personal workflows. 
      <br/> {''}
-            My goal is to integrate AI into our daily lives, and make its capabilities part of our routines.
+         My core design philosophy is that AI should enhance workflows *within* our daily routines, not force users to adopt radically new methods.
           </>
   ),
 };
@@ -129,10 +129,10 @@ const about = {
         role: "The Future of Journaling",
         achievements: [
            <>
-            An intelligent digital journal that uses an AI Agent to analyze entries, identify themes, and extract actionable tasks automatically.
+            An intelligent digital journal that uses an AI Agent to analyze entries, detect patterns and themes, and extract actionable tasks automatically.
            </>,
           <>
-            By keeping track of everything in a structured database, RAG allows the AI Agent to get the info it needs to understand where your life's at.
+            By keeping track of everything in a relational database, RAG allows the AI Agent to get the info it needs to understand where your life's at.
           </>,
           <>
             Every life's just a story: time to write your own. The power of AI storytelling allows us to move beyond Gamification, and unlock Narrativization.
@@ -141,14 +141,29 @@ const about = {
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/kanban and tasklist.png",
+            src: "/images/projects/narrative/kanban and tasklist.png",
             alt: "Once UI Project",
-            width: 9,
+            width: 10,
             height: 16,
           },
           {
-            src: "/images/projects/project-01/checkups.png",
+            src: "/images/projects/narrative/checkups.png",
             alt: "Once UI Project",
+            width: 12,
+            height: 16,
+
+          },
+          {
+            src: "/images/projects/narrative/narrative quickdemo fixed.mp4",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/narrative/journal.png",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
           },
         ],
       },
@@ -191,13 +206,15 @@ const about = {
         title: "AI Agent & LLM Integration",
         description: <>Designing and implementing autonomous agents, leveraging RAG techniques, and integrating major LLM APIs (OpenAI, etc.) to build truly intelligent applications.</>,
         // optional: leave the array empty if you don't want to display images
-        
+         images: [
+        ],
       },
       {
         title: "TypeScript & React",
         description: <>Crafting robust, scalable frontends and business logic. Building the intuitive interfaces where AI does its work.</>,
         // optional: leave the array empty if you don't want to display images
-       
+        images: [
+        ],
       },
       {
         title: "Google Cloud Platform",

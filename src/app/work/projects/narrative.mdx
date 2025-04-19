@@ -1,0 +1,114 @@
+---
+title: "Narrative: Know Thyself"
+publishedAt: "2025-04-19"
+summary: >
+  Every life's a story: time to write your own. 
+  Narrative uses AI to turn your journal into a journey. 
+  Pick an AI Narrator to comment on your journal entries, manage your tasks, and chronicle your life as you write it into a saga.
+images:
+  - "/images/projects/narrative/quest list.png"
+  - "/images/projects/narrative/journal.png"
+  - "/images/projects/narrative/kanban and tasklist.png"
+
+team:
+  - name: Frederico Luz
+    role: Creator
+    avatar: /images/avatar.jpg
+    linkedIn: https://linkedin.com/in/fredericoluzai
+---
+
+# Project Deep Dive: Narrative - Beyond Productivity Apps, Towards AI-Powered Personal Journeys
+
+## The Problem: Productivity Tools That Create More Work
+
+Traditional productivity apps often fail users, especially those with executive function challenges such as ADHD - like me. They demand rigid routines, meticulous manual logging, and, to create emotional engagement, rely on superficial gamification. The friction of *managing* the work becomes a barrier. I needed a tool that integrated seamlessly, understood context, reduced administrative burden, and fostered motivation authentically.
+
+## My Solution: Narrative - Low-Friction Input, Agentic AI, and Narrativization
+
+Narrative is my answer: an AI-powered application minimizing friction by embedding an intelligent agent directly into the workflow. This agent leverages Large Language Models to understand your personal journey and actively assist you, moving beyond simple chatbot paradigms.
+
+### 1. Seamless Capture: The "Checkup" System
+
+Instead of a traditional long journal entry at the day's end, Narrative uses frequent, low-effort "Checkups" for capturing thoughts, feelings, and updates *in the moment*:
+You can log them in 3 ways:
+*   **Text Entry:** Quick notes.
+*   **Voice Transcription:** Rant for a while, the app transcribes your braindump and saves it. This makes it SIGNIFICANTLY more convenient to write down what's been happening.
+*   **Conversational Check-in:** Brief chats with the AI agent get converted into checkups. One of the only cases where the chatbot interface makes sense.
+
+The AI Agent will then respond to the checkup, with your life context in mind. It can generate new tasks based on what you've shared with it, and update existing ones. This eases much of the friction in manually managing your to-do list.  
+
+<video width="100%" controls>
+  <source src="/images/projects/narrative/checkupdemo.mp4" type="video/mp4" />
+  Sorry, your browser doesn't support embedded videos.
+</video>
+
+> **Design Insight:** Matches capture method to user context/energy, making data collection almost passive and reducing the friction often associated with journaling or task logging.
+
+### 2. Motivation Reimagined: Narrativization, Not Gamification
+
+Narrative replaces shallow gamification with *Narrativization*
+
+*   **AI Narrators:** Choose an AI persona (currently "inspired" by fictional characters) for motivation styled to your preference, powered by DeepSeek's writing ability. The Narrator creates an engaging personal story around your goals and daily life. It acts as a sort of sidekick, able to encourage and motivate, but also analyze your actions and choices.* 
+*  **The Quest Log: Turning Your Journal into a Journey:** Inspired by RPGs like *Cyberpunk 2077* and *The Witcher*, long-term goals aren't just items on a list, they're **Quests**. When you add a new Quest (through braindumping your goals and objectives with voice transcription), the Narrator generates an engaging, adventurous description for it. This reframes your goals as ambitions, combats the monotony of chipping away at large goals, and helps you see your own life through a more creative, narrativized lens. Your tasks are linked to these overarching quests, giving immediate actions a sense of greater purpose within your personal saga.
+
+![Narrative Quest Log UI](/images/projects/narrative/quest_list.png)
+*   **Long Term Vision:** The Narrator keeps track of your mood and productivity as you log new entries, which lets you look at your life not just on a day-to-day basis, but on a larger timescale.
+
+> **Design Insight:** Taps into deeper human drivers for motivation than simple reward mechanics, leveraging the chosen LLM's creative capabilities.
+
+### 3. The AI Agent: A Dual-LLM System for Context, Automation, and Quality
+
+The core of Narrative isn't just LLM integration. The Narrator's a carefully designed **AI agent** employing a multi-LLM strategy for optimal performance and context-awareness.
+
+*   **Agentic Workflow:** The system operates as an agent capable of understanding user input, retrieving relevant information, interacting with external tools (the database), and taking actions (updating tasks, generating text).
+*   **Context Retrieval & Planning:** Whenever you interact with the Narrator, the fast, cost-effective Gemini 2.5 Flash model acts as the agent's 'retrieval' module.
+    1.  It searches across your ** SQL database** (containing long-term Goals/Quests, Tasks, past Checkups, Journal Entries).
+    2.  It identifies the most relevant information needed for context (using Retrieval-Augmented Generation principles) without passing unnecessary data to the main LLM.
+    3.  It determines if an action like task creation or update is likely needed based on the input.
+*   **High-Quality Generation & Analysis:** The curated context and user input are passed to DeepSeek (chosen for superior creative writing). This model generates:
+    1.  Narratively engaging responses from your chosen AI Narrator persona, whether in chat messages or checkup responses.
+    2.  The deeper, more strategic end-of-day analysis reports.
+*   **Automated Task Management:** Due to it's speed and intelligence, Flash also handles the agent's 'action' logic for task management:
+    1.  It parses your Checkup entries and chat messages, specifically looking for intent related to starting, progressing, or completing tasks.
+    2.  If such intent is detected, it cross-references the mention with your task list in Supabase.
+    3.  It then **automatically updates the task status** (To-Do -> In Progress -> Done) directly in the database, removing the manual burden from the user.
+
+<video width="100%" controls>
+  <source src="/images/projects/narrative/chat taskgen.mp4" type="video/mp4" />
+  Sorry, your browser doesn't support embedded videos.
+</video>
+
+![Task List Example](/images/projects/narrative/kanban and tasklist.png)
+
+> **Technical Insight:** This multi-step, multi-LLM agent architecture separates concerns effectively. Flash handles the high-frequency, low-complexity RAG and rule-based task logic quickly and cheaply. DeepSeek focuses on high-quality writing where emotional engagement matters. The automated task updates via Flash's database interaction are central to the low-friction design and demonstrate practical agent tool use.
+
+
+
+### 4. Deep Reflection: AI-Powered End-of-Day Analysis
+
+Narrative consolidates daily Checkups and uses DeepSeek to provide unique insights:
+
+*   **Timeline Analysis:** Compares daily entries with past data, highlighting trends and progress.
+*   **Strategic Analysis:** Performs a SWOT-like assessment based on the day's content related to your defined "Quests."
+
+![End of Day Analysis Example](/images/projects/narrative/journal.png)
+
+> **Design Insight:** Provides actionable self-reflection without requiring manual review of vast amounts of text, leveraging the LLM's analytical capabilities on curated data.
+
+## Impact and Technology
+
+Narrative showcases practical, deeply integrated AI application beyond simple chat interfaces, embodying my philosophy of embedding AI into useful workflows:
+
+*   **Core AI:** Agentic design using Google Gemini 2.5 Flash (RAG, Task Logic) & DeepSeek (Narrative Generation, Analysis).
+*   **Backend & Data:** Supabase (PostgreSQL DB for Tasks, Goals, Entries).
+*   **Frontend:** TypeScript & Expo.
+*   **Cloud:** Google Cloud Platform (GCP) and Cloudfare Workers for hosting & backend services.
+
+This tool addresses real user needs, particularly for those managing ADHD or seeking mental wellness support, by providing a seamless, intelligent companion.
+
+## Future Directions & Adaptability: Cascade
+
+The underlying agent architecture (RAG, task automation logic) is adaptable. I'm concurrently developing **Cascade**, a B2B-focused fork. Cascade leverages the core task management agent but removes personal narrativization, focusing purely on streamlined, AI-automated task management and productivity insights for teams. This demonstrates the flexibility of the agent design.
+
+
+*   **Narrative is Open Source ([https://github.com/fredluz/narrative]) ** and I invite you to test it, or even contribute. A paid, hosted version is planned, pending backend refinements.

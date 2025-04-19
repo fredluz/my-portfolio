@@ -230,7 +230,11 @@ export default function About() {
                       <Text id={experience.company} variant="heading-strong-l">
                         {experience.company === "TeacherZero: Speed + Quality" ? (
                           <a href="/work/teacherzero" style={{ textDecoration: "underline" }}>
-                            TeacherZero: Classroom Prep Made Easy
+                            TeacherZero: Generate. Refine. Done.
+                          </a>
+                        ) : experience.company === "Narrative: Know Thyself" ? (
+                          <a href="/work/narrative" style={{ textDecoration: "underline" }}>
+                            Narrative: Know Thyself
                           </a>
                         ) : (
                           experience.company
