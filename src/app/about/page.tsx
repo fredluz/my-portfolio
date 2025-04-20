@@ -261,6 +261,19 @@ export default function About() {
                         </Text>
                       ))}
                     </Column>
+                    {/* Add "Read the Deep Dive" button after achievements */}
+                    {(experience.company === "TeacherZero: Classroom Prep Made Easy" || 
+                      experience.company === "Narrative: Know Thyself") && (
+                      <Flex marginTop="m">
+                        <Button
+                          href={experience.company === "TeacherZero: Classroom Prep Made Easy" ? 
+                            "/work/teacherzero" : "/work/narrative"}
+                          label={`Read the Deep Dive →`}
+                          variant="secondary"
+                          size="m"
+                        />
+                      </Flex>
+                    )}
                     {experience.images.length > 0 && (
                       <Flex fillWidth paddingTop="m" paddingLeft="40" wrap>
                         {experience.images.map((image, index) => (
