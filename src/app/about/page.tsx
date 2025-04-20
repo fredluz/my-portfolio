@@ -56,6 +56,11 @@ export default function About() {
       display: about.work.display,
       items: about.work.experiences.map((experience) => experience.company),
     },
+      {
+      title: about.motivation.title,
+      display: about.motivation.display,
+      items: [],
+    },
     {
       title: about.studies.title,
       display: about.studies.display,
@@ -219,6 +224,19 @@ export default function About() {
                 </a>
               </p>
             </Column>
+          )}
+
+          {about.motivation.display && (
+            <>
+              <Heading as="h2" id={about.motivation.title} variant="display-strong-s" marginBottom="m">
+                {about.motivation.title}
+              </Heading>
+              <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
+                <Text variant="body-default-l">
+                  {about.motivation.description}
+                </Text>
+              </Column>
+            </>
           )}
 
           {about.work.display && (

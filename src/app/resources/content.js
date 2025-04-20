@@ -179,6 +179,18 @@ const about = {
       },
     ],
   },
+  motivation: {
+    display: true,
+    title: "Why I Build",
+    description: (
+      <>
+        I build AI tools that solve real problems because I've experienced these problems firsthand. Managing ADHD, I've struggled with traditional productivity apps that demand more work just to track work. Pointless gamification never helped, since I don't care about virtual rewards, I care about making my life better.<br /><br />
+        That's why I created Narrative, which reimagines what productivity software can be. Instead of shallow game mechanics, it uses AI to weave your daily tasks into a meaningful story. It automates the boring parts and lets you focus on what matters. And to really leverage LLMs, you can even choose an AI companion inspired by your favorite characters to help keep you motivated (mine's Johnny Silverhand from Cyberpunk 2077).<br /><br />
+        TeacherZero came from a different insight: seeing a friend manually copy-pasting ChatGPT outputs to create worksheets. When he showed me his process, I knew I could do better. Real solutions come from understanding real workflows, not just throwing AI at a problem.<br /><br />
+        That's my mission: creating AI tools that actually fit into people's lives. Whether it's making productivity feel meaningful, or sweeping away tedious administrative tasks.
+      </>
+    ),
+  },
   studies: {
     display: false, // set to false to hide this section
     title: "Studies",
