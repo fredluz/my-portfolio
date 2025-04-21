@@ -226,18 +226,6 @@ export default function About() {
             </Column>
           )}
 
-          {about.motivation.display && (
-            <>
-              <Heading as="h2" id={about.motivation.title} variant="display-strong-s" marginBottom="m">
-                {about.motivation.title}
-              </Heading>
-              <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
-                <Text variant="body-default-l">
-                  {about.motivation.description}
-                </Text>
-              </Column>
-            </>
-          )}
 
           {about.work.display && (
             <>
@@ -320,6 +308,19 @@ export default function About() {
                     )}
                   </Column>
                 ))}
+              </Column>
+            </>
+          )}
+
+          {about.motivation.display && (
+            <>
+              <Heading as="h2" id={about.motivation.title} variant="display-strong-s" marginBottom="m">
+                {about.motivation.title}
+              </Heading>
+              <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
+                <Text variant="body-default-l">
+                  {about.motivation.description}
+                </Text>
               </Column>
             </>
           )}
