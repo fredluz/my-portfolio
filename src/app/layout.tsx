@@ -44,6 +44,7 @@ const primary = Inter({
   variable: "--font-primary",
   subsets: ["latin"],
   display: "swap",
+  preload: true, // Prioritize loading the primary font
 });
 
 type FontConfig = {
@@ -94,13 +95,13 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       <ToastProvider>
         <Column style={{ minHeight: "100vh" }} as="body" fillWidth margin="0" padding="0">
           <Background
-            mask={{
-              cursor: effects.mask.cursor,
+            mask={{ // Disable cursor mask effect
+              cursor: false, // Assuming 'false' disables it, adjust if prop name differs
               x: effects.mask.x,
               y: effects.mask.y,
               radius: effects.mask.radius,
             }}
-            gradient={{
+            gradient={{ // Keep gradient, maybe reduce opacity slightly? Using original for now.
               display: effects.gradient.display,
               x: effects.gradient.x,
               y: effects.gradient.y,
@@ -109,34 +110,23 @@ export default async function RootLayout({ children }: RootLayoutProps) {
               tilt: effects.gradient.tilt,
               colorStart: effects.gradient.colorStart,
               colorEnd: effects.gradient.colorEnd,
-              opacity: effects.gradient.opacity as
-                | 0
-                | 10
-                | 20
-                | 30
-                | 40
-                | 50
-                | 60
-                | 70
-                | 80
-                | 90
-                | 100,
+              opacity: effects.gradient.opacity as any, // Keep original opacity
             }}
-            dots={{
-              display: effects.dots.display,
+            dots={{ // Disable dots
+              display: false,
               color: effects.dots.color,
               size: effects.dots.size as any,
               opacity: effects.dots.opacity as any,
             }}
-            grid={{
-              display: effects.grid.display,
+            grid={{ // Disable grid
+              display: false,
               color: effects.grid.color,
               width: effects.grid.width as any,
               height: effects.grid.height as any,
               opacity: effects.grid.opacity as any,
             }}
-            lines={{
-              display: effects.lines.display,
+            lines={{ // Disable lines
+              display: false,
               opacity: effects.lines.opacity as any,
             }}
           />

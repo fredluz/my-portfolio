@@ -4,9 +4,9 @@ import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column } from "@/
 import { Projects } from "@/components/work/Projects";
 
 import { baseURL, routes } from "@/app/resources";
-import { home, about, person, newsletter } from "@/app/resources/content";
-import { Mailchimp } from "@/components";
-import { Posts } from "@/components/blog/Posts";
+import { home, about, person } from "@/app/resources/content"; // Removed newsletter import
+// Removed Mailchimp import
+// Removed Posts import
 import styles from "./home.module.scss"; // Import home page styles
 
 export async function generateMetadata() {
@@ -82,16 +82,16 @@ export default function Home() {
       />
       <Column fillWidth paddingY="l" gap="m">
         <Column maxWidth="s">
-          <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="m">
-            <Heading wrap="balance" variant="display-strong-l">
+          {/* <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="m"> */}
+            <Heading wrap="balance" variant="display-strong-l" paddingBottom="m"> {/* Added paddingBottom here */}
               {home.headline}
             </Heading>
-          </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="m">
+          {/* </RevealFx> */}
+          {/* <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="m"> */}
             {/* Render subline with the last sentence highlighted */}
-            <Text wrap="balance" onBackground="accent-strong" variant="heading-default-xl">
+            <Text wrap="balance" onBackground="accent-strong" variant="heading-default-xl" paddingBottom="m"> {/* Added paddingBottom here */}
               <>
-                I'm Fred, an AI Agent Designer who makes using AI   
+                I'm Fred, an AI Agent Designer who makes using AI
 <Text wrap="balance" color="accent-strong" onBackground="accent-medium" variant="heading-default-xl"> intuitive</Text>, <Text wrap="balance" onBackground="brand-medium" variant="heading-default-xl">easy</Text> and <Text wrap="balance" onBackground="brand-medium" variant="heading-default-xl">fast</Text>.
               <br/>
                 <br /> AI tech is advancing extremely quickly, but it's still not being properly integrated into the real world. 
@@ -100,7 +100,7 @@ export default function Home() {
                 <br/><Text wrap="balance" color="accent-strong" onBackground="accent-medium" variant="heading-default-xl">  No one should be forced to waste time prompting chatbots ever again.</Text>
               </>
             </Text>
-          </RevealFx>
+          {/* </RevealFx> */}
           <RevealFx translateY="12" delay={0.4} horizontal="start">
             <Button
               id="about"
