@@ -6,6 +6,7 @@ const routes = {
   "/work": true,
   "/blog": false,
   "/contact": true,
+  "/teacherZero": true, // Enable the TeacherZero landing page route
 };
 
 // Enable password protection on selected routes

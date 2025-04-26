@@ -1,30 +1,25 @@
-# Current Task: Analyze Portfolio Template & Explain Customization
+# Current Task: TeacherZero Landing Page Integration
 
 ## Objective
 
-Analyze the provided Next.js portfolio template to understand its structure, functionality, and customization methods. Provide a clear explanation to the user, including how to change the color of a specific line of text to the site's accent color.
+Integrate the TeacherZero product landing page into the existing portfolio website.
 
-## Key Questions to Answer
+## Requirements
 
-1.  **How does the template work?**
-    *   What is the technology stack? (Confirmed: Next.js, React, TypeScript, SCSS Modules, potentially Tailwind, `once-ui` library)
-    *   How is the project structured? (File/folder organization)
-    *   Where is the main configuration managed?
-    *   How is page content (text, images) managed?
-    *   How is styling handled (global, component-level, UI library)?
-2.  **How can the user customize it?**
-    *   Where to change text content?
-    *   Where to change images?
-    *   Where to adjust site settings (e.g., name, social links)?
-    *   How to modify colors, fonts, and other styles?
-3.  **Specific Customization: Changing Text Color**
-    *   How is the "accent color" defined in the template?
-    *   What is the recommended way to apply this accent color to a specific piece of text? (e.g., using a CSS class, utility class, inline style, component prop).
+1.  **Fix 404 Error:** Resolve the issue where accessing `/teacherZero` renders the application's custom 404 page (`not-found.tsx`) despite the route existing and returning a 200 status code.
+2.  **Set URL:** Ensure the landing page is accessible specifically at the URL `http://localhost:3000/teacherZero` (with an uppercase 'Z').
 
-## Plan
+## Current Status
 
-1.  Read key configuration, content, and layout files (`package.json`, `postcss.config.js`, `src/app/resources/config.js`, `src/app/resources/content.js`, `src/app/layout.tsx`).
-2.  Investigate the `src/once-ui` directory to understand its role and styling system.
-3.  Analyze the findings to answer the key questions.
-4.  Update Memory Bank files (`systemPatterns.md`, `techContext.md`, `activeContext.md`).
-5.  Present the analysis and customization plan to the user.
+*   The necessary page components (`src/app/teacherZero/page.tsx`, `layout.tsx`, `page.module.scss`) exist.
+*   The directory was renamed to `src/app/teacherZero`.
+*   Initial build errors after renaming were resolved by clearing the `.next` cache.
+*   The server returns 200 OK for `/teacherZero`, but renders the custom `not-found.tsx` page.
+*   Analysis revealed the `src/components/RouteGuard.tsx` component was blocking the route because `/teacherZero` was not listed in the `routes` object in `src/app/resources/config.js`.
+*   **Fix Applied:** Added `"/teacherZero": true` to the `routes` object in `src/app/resources/config.js`.
+
+## Next Steps (Verification)
+
+1.  Verify if the TeacherZero landing page now renders correctly at `http://localhost:3000/teacherZero`.
+2.  Update `activeContext.md`.
+3.  If successful, conclude the task. If not, further investigation is needed.

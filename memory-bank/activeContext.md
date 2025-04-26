@@ -2,24 +2,24 @@
 
 ## 1. Current Focus
 
-*   Initial analysis of the portfolio template structure and technology stack.
-*   Identifying key files for configuration, content, and styling.
-*   Understanding how to perform basic customizations, specifically changing text color to the accent color.
+*   Resolving the issue where the `/teacherZero` route renders the application's custom 404 page (`not-found.tsx`) instead of the intended landing page content.
 
 ## 2. Recent Changes
 
-*   Initialized the Memory Bank by creating core documentation files:
-    *   `projectbrief.md`
-    *   `productContext.md`
-    *   `systemPatterns.md` (initial structure)
-    *   `techContext.md` (initial structure)
-    *   `activeContext.md` (this file)
+*   Created `memory-bank/currentTask.md` to track the TeacherZero integration task.
+*   Renamed `src/app/teacherzero` to `src/app/teacherZero` to match the desired URL casing.
+*   Stopped the dev server, cleared the `.next` cache, and restarted the server to resolve build conflicts caused by the rename on a case-insensitive filesystem.
+*   Analyzed `src/app/teacherZero/page.tsx` (found OK).
+*   Analyzed `src/app/teacherZero/layout.tsx` (found and fixed incorrect `<html>`/`<body>` tags).
+*   Analyzed `src/app/layout.tsx` (identified `<RouteGuard>` as potentially relevant).
+*   Analyzed `src/components/RouteGuard.tsx` (identified it as the cause of the 404 rendering).
+*   Analyzed `src/app/resources/index.ts` and `src/app/resources/config.js` (located the `routes` object).
+*   **Fix Applied:** Added `"/teacherZero": true` to the `routes` object in `src/app/resources/config.js` to allow `RouteGuard` to permit access.
 
 ## 3. Next Steps
 
-*   Update `systemPatterns.md` and `techContext.md` with consolidated findings based on file analysis.
-*   Investigate `src/once-ui/styles/index.scss` or `src/once-ui/tokens/index.scss` briefly to confirm how colors/accent are likely applied via CSS/SCSS.
-*   Formulate the explanation and customization plan for the user using `plan_mode_respond`.
+*   Ask the user to verify if `http://localhost:3000/teacherZero` now renders the correct landing page content.
+*   If successful, conclude the task. If not, further investigation is needed.
 
 ## 4. Active Decisions & Considerations
 

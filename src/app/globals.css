@@ -1,0 +1,101 @@
+:root {
+  --max-width: 1200px;
+  --border-radius: 8px; /* Default border radius */
+  --font-primary: var(--font-inter);
+
+  /* TeacherZero Specific Variables (Consider scoping if needed) */
+  --tz-primary: #3955e8;
+  --tz-primary-light: #4f68ed;
+  --tz-primary-dark: #1c3aa6;
+  --tz-accent: #ff5722;
+  --tz-accent-light: #ff6e40;
+  --tz-accent-dark: #e84c17;
+  --tz-text: #212121;
+  --tz-text-light: #757575;
+  --tz-background: #ffffff;
+  --tz-background-alt: #f7f9ff;
+  --tz-success: #4caf50;
+  --tz-error: #f44336;
+  --tz-border-radius: 12px; /* Specific border radius for TeacherZero */
+  --tz-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --tz-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --tz-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --tz-transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-primary);
+}
+
+/* Base Typography (from original globals.css) */
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  line-height: 1.2;
+}
+
+/* TeacherZero Specific Typography Overrides (moved from page.module.scss) */
+/* Consider scoping these under a parent class if they conflict */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0; /* TZ specific */
+  line-height: 1.2; /* Same as base */
+  font-weight: 700; /* TZ specific */
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem); /* TZ specific */
+  letter-spacing: -0.02em; /* TZ specific */
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* TZ specific */
+  margin-bottom: 1rem; /* TZ specific */
+  letter-spacing: -0.01em; /* TZ specific */
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem); /* TZ specific */
+}
+
+p {
+  margin-bottom: 1.5rem; /* TZ specific override */
+  font-size: clamp(1rem, 2vw, 1.125rem); /* TZ specific */
+  /* line-height: 1.6; Inherited from base */
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+section {
+  width: 100%;
+}

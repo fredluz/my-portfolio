@@ -1,0 +1,481 @@
+// Performance-optimized variables with modern color scheme
+// Moved :root variables to globals.css
+
+// Base styles
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--tz-text);
+  background-color: var(--tz-background);
+  overflow-x: hidden; // Prevent horizontal scrolling
+}
+
+// Typography element styles moved to globals.css
+
+// Section container for consistent padding
+.sectionContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+// Animation classes
+.fadeIn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// Hero section
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f5f7ff 0%, #e8eeff 100%);
+  
+  .heroContent {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .heroTitle {
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, var(--tz-primary) 0%, var(--tz-primary-dark) 100%);
+    -webkit-background-clip: text;
+    /* stylelint-disable-next-line property-no-unknown */
+    -webkit-text-fill-color: transparent; // Needed for text gradient effect
+    background-clip: text;
+    /* stylelint-disable-next-line property-no-unknown */
+    text-fill-color: transparent; // Fallback/standard property
+  }
+  
+  .heroSubtitle {
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    opacity: 0.9;
+  }
+  
+  .heroGraphic {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    
+    .gradient {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 70% 30%, rgba(79, 104, 237, 0.05) 0%, rgba(79, 104, 237, 0) 50%);
+    }
+  }
+}
+
+// CTA Button
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--tz-primary) 0%, var(--tz-primary-light) 100%);
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  box-shadow: var(--tz-shadow-md), 0 10px 20px -5px rgba(57, 85, 232, 0.3);
+  transition: var(--tz-transition);
+  
+  &:hover, &:focus {
+    background: linear-gradient(90deg, var(--tz-primary-light) 0%, var(--tz-primary) 100%);
+    box-shadow: var(--tz-shadow-lg), 0 15px 30px -5px rgba(57, 85, 232, 0.4);
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: var(--tz-shadow-sm), 0 5px 15px -5px rgba(57, 85, 232, 0.5);
+  }
+}
+
+// Section styling
+.section {
+  padding: 5rem 0;
+  
+  &:nth-child(even) {
+    background-color: var(--tz-background-alt);
+  }
+}
+
+// Vision section
+.vision {
+  text-align: center;
+  
+  p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  }
+}
+
+// Problem section with stats
+.problem {
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+  
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: var(--tz-border-radius);
+    box-shadow: var(--tz-shadow-sm);
+    min-width: 180px;
+    transition: var(--tz-transition);
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--tz-shadow-md);
+    }
+    
+    .statNumber {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--tz-primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .statLabel {
+      text-align: center;
+      line-height: 1.3;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// Teacher First section
+.teacherFirst {
+  .promise {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #fff5f0 0%, #fff9f5 100%);
+    border-left: 5px solid var(--tz-accent);
+    border-radius: var(--tz-border-radius);
+    box-shadow: var(--tz-shadow-sm);
+  }
+}
+
+// Solution section
+.solution {
+  .videoContainer {
+    margin: 2rem 0;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--tz-border-radius);
+    box-shadow: var(--tz-shadow-md);
+  }
+  
+  .videoPlaceholder {
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, #e8eeff 0%, #d0d8ff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    .videoComingSoon {
+      font-size: 1.25rem;
+      color: var(--tz-primary);
+      opacity: 0.7;
+    }
+  }
+  
+  .highlight {
+    font-size: 1.25rem;
+    color: var(--tz-primary-dark);
+    text-align: center;
+    margin: 2rem 0;
+  }
+}
+
+// How it Works section
+.howItWorks {
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .step {
+    position: relative;
+    padding: 2rem;
+    background-color: white;
+    border-radius: var(--tz-border-radius);
+    box-shadow: var(--tz-shadow-sm);
+    transition: var(--tz-transition);
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--tz-shadow-md);
+    }
+    
+    .stepVideoPlaceholder {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      margin: 1rem 0;
+      background: linear-gradient(135deg, #e8eeff 0%, #d0d8ff 100%);
+      border-radius: calc(var(--tz-border-radius) - 4px);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      .stepPlaceholderText {
+        font-size: 0.9rem;
+        color: var(--tz-primary);
+        opacity: 0.7;
+        text-align: center;
+        padding: 0 1rem;
+      }
+    }
+    
+    .stepNumber {
+      position: absolute;
+      top: -20px;
+      left: 20px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--tz-primary);
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 700;
+      border-radius: 50%;
+      box-shadow: var(--tz-shadow-sm);
+    }
+  }
+}
+
+// Features section
+.features {
+  .featureCards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    
+    // Responsive behavior
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .featureColumn {
+    height: 100%;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: var(--tz-border-radius);
+    box-shadow: var(--tz-shadow-sm);
+    transition: var(--tz-transition);
+    display: flex;
+    flex-direction: column;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--tz-shadow-md);
+    }
+    
+    h3 {
+      color: var(--tz-primary-dark);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+    
+    p {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+  }
+  
+  .featureVideoPlaceholder {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    background: linear-gradient(135deg, #e8eeff 0%, #d0d8ff 100%);
+    border-radius: calc(var(--tz-border-radius) - 4px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .featurePlaceholderText {
+      font-size: 0.9rem;
+      color: var(--tz-primary);
+      opacity: 0.7;
+      text-align: center;
+      padding: 0 1rem;
+    }
+  }
+  
+  // Keep the old class for backward compatibility
+  .featureCard {
+    height: 100%;
+    transition: var(--tz-transition);
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--tz-shadow-md);
+    }
+    
+    h3 {
+      color: var(--tz-primary-dark);
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// About section
+.about {
+  .creatorContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+    
+    .creatorInfo {
+      flex: 1;
+    }
+  }
+}
+
+// Future vision section
+.future {
+  .roadmap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .roadmapItem {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: var(--tz-border-radius);
+    box-shadow: var(--tz-shadow-sm);
+    transition: var(--tz-transition);
+    border-top: 4px solid var(--tz-primary);
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--tz-shadow-md);
+    }
+    
+    h3 {
+      color: var(--tz-primary);
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// Beta access section
+.beta {
+  background: linear-gradient(135deg, #f0f5ff 0%, #e0e8ff 100%);
+  
+  .betaSignup {
+    max-width: 700px;
+    margin: 3rem auto 0;
+    padding: 2rem;
+    background-color: white;
+    border-radius: var(--tz-border-radius);
+    box-shadow: var(--tz-shadow-md);
+    text-align: center;
+    
+    h3 {
+      color: var(--tz-primary-dark);
+      margin-bottom: 1.5rem;
+    }
+    
+    p {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+// Footer
+.footer {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f0f2f5;
+  color: var(--tz-text-light);
+  font-size: 0.9rem;
+}
+
+// Media queries for responsive design
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .stats {
+    gap: 1rem;
+  }
+  
+  .stat {
+    padding: 1rem;
+    min-width: 140px;
+  }
+}
+
+// Performance optimizations
+// Reduce repaints by using transform/opacity for animations
+@media (prefers-reduced-motion) {
+  .fadeIn {
+    transition: opacity 0.3s ease;
+    transform: none;
+  }
+  
+  .ctaButton:hover {
+    transform: none;
+  }
+  
+  .step:hover, .featureCard:hover, .roadmapItem:hover {
+    transform: none;
+  }
+}
