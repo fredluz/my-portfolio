@@ -148,6 +148,7 @@ export function TeacherZeroContent() {
       <section className={`${styles.section} ${styles.features} ${styles.fadeIn}`}>
         <div className={styles.sectionContainer}>
           <h2>O Que Torna o TeacherZero Único?</h2>
+          <p> aqui eu devia falar sobre como já há quem tente usar o chatgpt mas não vale a pena porque não é a interface correta e continua a dar imenso trabalho </p>
           <div className={styles.featureCards}>
             <div className={styles.featureColumn}>
               <h3>Interface 100% Intuitiva</h3>
@@ -168,7 +169,14 @@ export function TeacherZeroContent() {
               <div className={styles.featureVideoPlaceholder}>
                 <div className={styles.featurePlaceholderText}>Vídeo demonstrativo</div>
               </div>
-              <p>(Em Breve) Encontra imagens relevantes para as tuas fichas usando pesquisa semântica inteligente, poupando ainda mais tempo na preparação de materiais visualmente atrativos.</p>
+              <p>Encontra imagens relevantes para as tuas fichas usando pesquisa semântica inteligente, poupando ainda mais tempo na preparação de materiais visualmente atrativos.</p>
+            </div>
+            <div className={styles.featureColumn}>
+              <h3>Rapidez Artificial, Conhecimento Humano</h3>
+              <div className={styles.featureVideoPlaceholder}>
+                <div className={styles.featurePlaceholderText}>Vídeo demonstrativo</div>
+              </div>
+              <p>O TeacherZero garante a qualidade pedagógica das fichas criadas, porque toda a informação é fornecida pelo educador, não pelo modelo IA. Ao contrário de alguns outros programas, 'halucinações' não são um problema.</p>
             </div>
           </div>
         </div>
@@ -203,17 +211,30 @@ export function TeacherZeroContent() {
             O TeacherZero é apenas o começo. Estamos a construir um ecossistema completo para te apoiar:
           </p>
           <div className={styles.roadmap}>
+
+            <div className={styles.roadmapItem}>
+              <h3>Criação Colaborativa</h3>
+              <p>Guarda e partilha as fichas entre os teus colegas, criando materiais coesos em conjunto</p>
+            </div>
+            <div className={styles.roadmapItem}>
+              <h3>Geração à Base de Vídeo</h3>
+              <p>Insere um link do YouTube para o TeacherZero analisar e tornar numa avaliação coerente e relevante</p>
+            </div>
+             <div className={styles.roadmapItem}>
+              <h3>Exportação para LMS</h3>
+              <p>Envia as fichas completas para o Moodle, o Classroom ou o Blackboard para os teus alunos as realizarem na hora</p>
+            </div>
+            <div className={styles.roadmapItem}>
+              <h3>App para Smartphone</h3>
+              <p>Cria os materiais de avaliação enquanto esperas pelo autocarro, recorrendo à nossa interface intuitiva No-Prompt</p>
+            </div>
             <div className={styles.roadmapItem}>
               <h3>TeacherOne</h3>
               <p>Correção assistida por IA que te ajuda a fornecer feedback mais significativo em menos tempo</p>
             </div>
             <div className={styles.roadmapItem}>
-              <h3>Criação Colaborativa</h3>
-              <p>Permitir que tu e a tua equipa criem materiais coesos em conjunto</p>
-            </div>
-            <div className={styles.roadmapItem}>
-              <h3>Aprendizagem Personalizada</h3>
-              <p>Ferramentas para adaptares facilmente fichas para diferentes necessidades de aprendizagem</p>
+              <h3>Análise de Dados</h3>
+              <p>IA poderosa analisa dados anonimizados para entender exatamente onde os teus alunos precisam de mais ajuda</p>
             </div>
           </div>
         </div>
