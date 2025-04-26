@@ -176,7 +176,7 @@ export function TeacherZeroContent() {
               <div className={styles.featureVideoPlaceholder}>
                 <div className={styles.featurePlaceholderText}>Vídeo demonstrativo</div>
               </div>
-              <p>O TeacherZero garante a qualidade pedagógica das fichas criadas, porque toda a informação é fornecida pelo educador, não pelo modelo IA. Ao contrário de alguns outros programas, 'halucinações' não são um problema.</p>
+              <p>O TeacherZero garante a qualidade pedagógica das fichas criadas, porque toda a informação é fornecida pelo educador, não pelo modelo IA. Ao contrário de alguns outros programas, 'alucinações' não são um problema.</p>
             </div>
           </div>
         </div>
