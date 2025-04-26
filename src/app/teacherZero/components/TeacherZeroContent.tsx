@@ -42,8 +42,9 @@ export function TeacherZeroContent() {
         <div className={styles.sectionContainer}>
           <h2>Uma Nova Visão Para a Educação</h2>
           <p>
-            TeacherZero não é apenas mais uma ferramenta. É o início de um movimento 
-            para libertar educadores da burocracia e devolver-lhes o que realmente importa: 
+           O TeacherZero não é apenas mais uma ferramenta. É o início da tecnologia que
+           revoluciona a educação. A nossa missão é clara: 
+            libertar educadores de trabalhos entediantes e devolver-lhes o que realmente importa: 
             <strong> tempo para ensinar e inspirar</strong>.
           </p>
         </div>
@@ -52,52 +53,15 @@ export function TeacherZeroContent() {
       {/* Problem Section */}
       <section className={`${styles.section} ${styles.problem} ${styles.fadeIn}`}>
         <div className={styles.sectionContainer}>
-          <h2>A Crise Silenciosa na Educação</h2>
+          <h2>O Problema Silencioso</h2>
           <p>
-            Sabemos que criar fichas de exercícios e materiais de apoio consome demasiado tempo. 
-            Tempo que podias usar para preparar aulas ou dar atenção personalizada aos teus alunos. 
-            É um trabalho necessário mas entediante, como lavar a roupa a que não podemos escapar.
+            Sabemos que criar fichas, testes e materiais de avaliação consome demasiado tempo. 
+            Tempo que podias usar para preparar aulas ou dar atenção cuidada a cada um dos teus alunos. 
+            É um trabalho necessário mas entediante, a que não podemos escapar. Como lavar a roupa.
           </p>
-          <div className={styles.stats}>
-            <div className={styles.stat}>
-              <span className={styles.statNumber}>7-12</span>
-              <span className={styles.statLabel}>Horas semanais perdidas</span>
-            </div>
-            <div className={styles.stat}>
-              <span className={styles.statNumber}>59%</span>
-              <span className={styles.statLabel}>Consideram deixar a profissão</span>
-            </div>
-            <div className={styles.stat}>
-              <span className={styles.statNumber}>0</span>
-              <span className={styles.statLabel}>Evolução nos métodos</span>
-            </div>
-          </div>
         </div>
       </section>
-
-      {/* Teacher First Philosophy */}
-      <section className={`${styles.section} ${styles.teacherFirst} ${styles.fadeIn}`}>
-        <div className={styles.sectionContainer}>
-          <h2>IA Com Coração: Professores Primeiro, Sempre</h2>
-          <p>
-            Ao contrário das gigantes tecnológicas que criam ferramentas sem considerar o seu impacto 
-            real, o TeacherZero nasceu da gratidão e respeito genuínos pelos educadores.
-          </p>
-          <p>
-            Estou onde estou hoje graças a professores extraordinários que investiram em mim. 
-            Criei o TeacherZero para honrar esse legado e apoiar a próxima geração de educadores.
-          </p>
-          <div className={styles.promise}>
-            <h3>A Nossa Promessa</h3>
-            <p>
-              O TeacherZero sempre irá valorizar e enriquecer a tua carreira docente, nunca substituí-la. 
-              A nossa missão é fundamentalmente diferente: tornar o teu ensino mais humano, 
-              mais gratificante e mais impactante, eliminando as tarefas repetitivas.
-            </p>
-          </div>
-        </div>
-      </section>
-
+      
       {/* Solution Section */}
       <section className={`${styles.section} ${styles.solution} ${styles.fadeIn}`}>
         <div className={styles.sectionContainer}>
@@ -117,10 +81,34 @@ export function TeacherZeroContent() {
             <strong>Isto não é sobre automatizar o ensino. É sobre potenciar o teu impacto como educador.</strong>
           </p>
         </div>
-      </section>      {/* How it Works Section */}
+      </section>
+      {/* Teacher First Philosophy */}
+      <section className={`${styles.section} ${styles.teacherFirst} ${styles.fadeIn}`}>
+        <div className={styles.sectionContainer}>
+          <h2>IA Ética: Professores Primeiro</h2>
+          <p>
+            Ao contrário das gigantes Big Tech que criam ferramentas sem considerar o seu impacto 
+            real, o TeacherZero nasceu do respeito e genuína gratidão pelos educadores.
+          </p>
+          <p>
+            Estou onde estou hoje graças a professores extraordinários que investiram em mim. 
+            Criei o TeacherZero para os honrar e apoiar a próxima geração de educadores.
+          </p>
+          <div className={styles.promise}>
+            <h3>A Nossa Promessa</h3>
+            <p>
+              O TeacherZero sempre irá valorizar e enriquecer a tua carreira docente, nunca substituí-la. 
+              A nossa missão é fundamentalmente diferente: tornar o teu ensino mais humano, 
+              mais gratificante e mais impactante, eliminando as tarefas repetitivas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How it Works Section */}
       <section className={`${styles.section} ${styles.howItWorks} ${styles.fadeIn}`}>
         <div className={styles.sectionContainer}>
-          <h2>Como Funciona? Simples e Rápido.</h2>
+          <h2>Como Funciona? Simples, Rápido e Poderoso.</h2>
           <div className={styles.steps}>
             <div className={`${styles.step} ${styles.step1}`}>
               <div className={styles.stepNumber}>1</div>
@@ -140,7 +128,7 @@ export function TeacherZeroContent() {
             </div>
             <div className={`${styles.step} ${styles.step3}`}>
               <div className={styles.stepNumber}>3</div>
-              <h3>Refina e Exporta</h3>
+              <h3>Refina até à Perfeição</h3>
               <div className={styles.stepVideoPlaceholder}>
                 <div className={styles.stepPlaceholderText}>Vídeo rápido</div>
               </div>
@@ -152,7 +140,7 @@ export function TeacherZeroContent() {
               <div className={styles.stepVideoPlaceholder}>
                 <div className={styles.stepPlaceholderText}>Vídeo rápido</div>
               </div>
-              <p>Exporte imediatamente em três cliques após refinar a sua ficha. Em 3 cliques, pode ter os lápis dos seus alunos nela.</p>
+              <p>Exporta imediatamente em três cliques após refinar a tua ficha. Em 3 cliques, os teus alunos podem começar a escrever.</p>
             </div>
           </div>
         </div>
@@ -189,7 +177,7 @@ export function TeacherZeroContent() {
       {/* About Section */}
       <section className={`${styles.section} ${styles.about} ${styles.fadeIn}`}>
         <div className={styles.sectionContainer}>
-          <h2>Criado por Gratidão, Não por Lucro</h2>
+          <h2>Criado por Gratidão</h2>
           <div className={styles.creatorContainer}>
             <div className={styles.creatorInfo}>
               <p>
@@ -199,7 +187,7 @@ export function TeacherZeroContent() {
               </p>
               <p>
                 Estou a construir o TeacherZero para ser a ferramenta que os meus próprios professores extraordinários 
-                - como a Professora Sandra, a Stora Filomena, o Stor Arménio, e o Professor Balinho - 
+                - como a Professora Sandra, a Stora Filomena, e o Professor Balinho - 
                 mereciam ter tido. A dedicação deles inspirou-me a criar algo que realmente faz diferença.
               </p>
             </div>
@@ -251,7 +239,7 @@ export function TeacherZeroContent() {
               href="https://docs.google.com/forms/d/e/1FAIpQLSea_BzP21b7JB2ekIgCU--FN-qkrcLRQkoc71VIs02ctv-TRg/viewform?usp=dialog" 
               className={styles.ctaButton}
             >
-              Transforma a Tua Forma de Ensinar - Acesso Beta
+              Junta-te à Mudança - Acesso Beta
             </a>
           </div>
         </div>

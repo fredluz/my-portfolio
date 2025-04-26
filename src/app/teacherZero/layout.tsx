@@ -12,12 +12,12 @@ interface TeacherZeroLayoutProps {
 }
 
 export const metadata = {
-  title: "TeacherZero - Crie Fichas de Trabalho 42x Mais Rápido com IA",
-  description: "TeacherZero é a ferramenta de IA simples e intuitiva feita para educadores. Crie materiais didáticos de alta qualidade em minutos, não em horas.",
+  title: "TeacherZero - Cria Fichas 42x Mais Rápido com IA",
+  description: "O TeacherZero é a ferramenta de IA simples e intuitiva feita para educadores. Materiais didáticos de alta qualidade em minutos, não em horas.",
   openGraph: {
     title: "TeacherZero - IA para Educadores",
-    description: "Crie fichas de trabalho 42x mais rápido com IA poderosa e simples.",
-    url: "https://fredlouz.",
+    description: "Cria fichas 42x mais rápido com IA poderosa e simples.",
+    url: "https://fredluz.pt/teacherZero",
     siteName: "TeacherZero",
     locale: "pt_PT",
     type: "website",
