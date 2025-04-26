@@ -8,6 +8,8 @@ const withMDX = mdx({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
+  
+  // Redirects are now handled by src/middleware.ts
 };
 
 export default withMDX(nextConfig);

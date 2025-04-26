@@ -125,7 +125,8 @@ export default function Home() {
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 2]} />
+        {/* Removed range prop to display all projects */}
+        <Projects /> 
       </RevealFx>
     </Column>
     </> // Close the fragment

@@ -15,8 +15,10 @@ export default function PortfolioLayout({ children }: PortfolioLayoutProps) {
       fillWidth
       paddingY="l"
       paddingX="l"
-      horizontal="center"
-      flex={1}
+      horizontal="center" // This might conflict with direction="column", let's keep it for now but might need removal
+      direction="column" // Set flex direction to column
+      flex={1} // Outer container takes available space
+      style={{ minHeight: "100vh" }} // Ensure outer container takes at least full viewport height
     >
       {/* Background component moved here from root layout */}
       <Background
@@ -55,10 +57,18 @@ export default function PortfolioLayout({ children }: PortfolioLayoutProps) {
           opacity: effects.lines.opacity as any,
         }}
       />
-      <Flex horizontal="center" fillWidth minHeight="0" style={{ zIndex: 1 }}> {/* Ensure content is above background */}
+      {/* Content container */}
+      <Flex 
+        horizontal="center" 
+        fillWidth 
+        flex={1} // Make content area grow to push footer down
+        // minHeight="0" // Removed minHeight="0" as flex={1} should handle growth
+        style={{ zIndex: 1 }} // Ensure content is above background
+      >
         <RouteGuard>{children}</RouteGuard>
       </Flex>
-      <Footer />
+      {/* Footer should now be pushed to the bottom */}
+      <Footer /> 
     </Flex>
   );
 }
