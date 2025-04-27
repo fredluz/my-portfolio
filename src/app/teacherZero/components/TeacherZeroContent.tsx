@@ -42,30 +42,58 @@ export function TeacherZeroContent() {
   const [currentQuestion, setCurrentQuestion] = useState(
     'Qual é a principal função da mitocôndria na célula?'
   );
+  // Add states for tracking animation states
+  const [isThinking, setIsThinking] = useState(false);
+  const [clickedButton, setClickedButton] = useState<'harder' | 'easier' | 'different' | null>(null);
+  const [showSavedTime, setShowSavedTime] = useState(false);
+  // Add state to track if refinements have been used
+  const [hasUsedRefinements, setHasUsedRefinements] = useState(false);
 
   const handleMainButtonClick = () => {
     if (!isRegenerateMode) {
-      setShowRefinementButtons(true);
-      setIsRegenerateMode(true);
+      // Only show refinement buttons if they haven't been used yet
+      if (!hasUsedRefinements) {
+        setShowRefinementButtons(true);
+        setIsRegenerateMode(true);
+      }
     } else {
-      // Simulate regeneration
-      setCurrentQuestion('Descreva o papel da mitocôndria na produção de energia celular.');
-      setShowRefinementButtons(false);
-      setIsRegenerateMode(false);
+      // Set thinking state and click state for animation
+      setIsThinking(true);
+      setClickedButton(null);
+      
+      // Simulate regeneration with a delay to show animation
+      setTimeout(() => {
+        setCurrentQuestion('Explique a ligação entre o trabalho intenso de células tal como neurónios e o seu elevado número de mitocôndrias.');
+        setShowRefinementButtons(false);
+        setIsRegenerateMode(false);
+        setIsThinking(false);
+        setClickedButton(null);
+        setShowSavedTime(true); // Show the saved time message
+        setHasUsedRefinements(true); // Mark refinements as used
+      }, 1500);
     }
   };
 
   const handleRefinementClick = (type: 'harder' | 'easier' | 'different') => {
-    // Simulate different refinements
+    // Set which button was clicked for animation
+    setClickedButton(type);
+    setIsThinking(true);
+    
+    // Simulate different refinements after a delay
     const refinements = {
-      harder: 'Analise como as disfunções mitocondriais afetam o metabolismo celular e relacione com doenças metabólicas.',
-      easier: 'Liste três características principais da mitocôndria e explique porque ela é chamada de "central energética" da célula.',
-      different: 'Compare o processo de produção de energia nas mitocôndrias com a fotossíntese nos cloroplastos.'
-    };
-
-    setCurrentQuestion(refinements[type]);
-    setShowRefinementButtons(false);
-    setIsRegenerateMode(false);
+  harder: 'Analise como a estrutura interna da mitocôndria se relaciona diretamente com a produção de ATP através da respiração celular.',
+  easier: 'Qual molécula rica em energia é o principal produto da mitocôndria?',
+  different: 'Compare a produção de energia na mitocôndria com a produção dos cloroplastos na célula vegetal.'
+};
+      setTimeout(() => {
+        setCurrentQuestion(refinements[type]);
+        setShowRefinementButtons(false);
+        setIsRegenerateMode(false);
+        setIsThinking(false);
+        setClickedButton(null);
+        setShowSavedTime(true); // Show the saved time message
+        setHasUsedRefinements(true); // Mark refinements as used permanently
+      }, 1500);
   };
   
   return (
@@ -175,7 +203,7 @@ export function TeacherZeroContent() {
 
             <div className={styles.cell}>Qualidade pedagógica</div>
             <div className={styles.cell}>Alta</div>
-            <div className={styles.cell}>Baixa</div>
+            <div className={styles.cell}>Variável</div>
             <div className={`${styles.cell} ${styles.highlight}`}>Augmentada</div>
 
             <div className={styles.cell}>Adaptado ao teu currículo</div>
@@ -300,38 +328,59 @@ export function TeacherZeroContent() {
             
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               <div className={styles.refinementEngine}>
-                <button 
-                  className={`${styles.editLlmButton} ${isRegenerateMode ? styles.regenerateMode : ''}`}
-                  title={isRegenerateMode ? "Regenerar questão" : "Clica para começar a refinar"}
-                  onClick={handleMainButtonClick}
-                >
-                  {isRegenerateMode ? '↻' : '❈'}
-                </button>
+                {(showSavedTime || hasUsedRefinements) && (
+                  <div className={`${styles.savedTime} ${styles.visible}`}>
+                    Poupaste quanto tempo?
+                  </div>
+                )}
+                {/* Main button - only shown when refinements haven't been used yet */}
+                {!hasUsedRefinements && (
+                  <button 
+                    className={`${styles.editLlmButton} ${isRegenerateMode ? styles.regenerateMode : ''} ${isThinking && isRegenerateMode ? styles.thinking : ''}`}
+                    title={isRegenerateMode ? "Regenerar questão" : "Clica para começar a refinar"}
+                    onClick={handleMainButtonClick}
+                    disabled={isThinking && isRegenerateMode}
+                  >
+                    {isRegenerateMode ? '↻' : '❈'}
+                  </button>
+                )}
 
-                {showRefinementButtons && (
+                {showRefinementButtons && !isThinking && !clickedButton && !hasUsedRefinements && (
                   <>
                     <button
-                      className={`${styles.refineButton} ${styles.refineButtonUp}`}
+                      className={`${styles.refineButton} ${styles.refineButtonUp} ${styles.visible}`}
                       title="Mais Difícil"
                       onClick={() => handleRefinementClick('harder')}
                     >
                       ↑
                     </button>
                     <button
-                      className={`${styles.refineButton} ${styles.refineButtonDown}`}
+                      className={`${styles.refineButton} ${styles.refineButtonDown} ${styles.visible}`}
                       title="Mais Fácil"
                       onClick={() => handleRefinementClick('easier')}
                     >
                       ↓
                     </button>
                     <button
-                      className={`${styles.refineButton} ${styles.refineButtonLeft}`}
+                      className={`${styles.refineButton} ${styles.refineButtonLeft} ${styles.visible}`}
                       title="Tópico Diferente"
                       onClick={() => handleRefinementClick('different')}
                     >
                       ↜
                     </button>
                   </>
+                )}
+                {isThinking && clickedButton && (
+                  <button
+                    className={`${styles.refineButton} ${styles.visible} ${styles.clicked} ${styles.thinking} ${
+                      clickedButton === 'harder' ? styles.refineButtonUp :
+                      clickedButton === 'easier' ? styles.refineButtonDown :
+                      styles.refineButtonLeft
+                    }`}
+                    disabled
+                  >
+                    {clickedButton === 'harder' ? '↑' : clickedButton === 'easier' ? '↓' : '↜'}
+                  </button>
                 )}
 
                 {showPromptInput && (
@@ -452,7 +501,7 @@ export function TeacherZeroContent() {
           <div className={styles.betaSignup}>
             <h3>Sê Pioneiro da Mudança na Educação</h3>
             <p>
-              Estamos a abrir acesso a <strong>100</strong> educadores para o nosso 
+              Estamos a abrir parceria a <strong>99</strong> educadores para o nosso 
               Programa Parceiros Beta. Candidata-te e habilita-te a ganhar 
               acesso antecipado ao futuro.
             </p>

@@ -533,7 +533,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 6px;
     z-index: 100;
 
@@ -546,6 +546,34 @@
       background-color: #e67e22;
       font-size: 18px;
       font-weight: bold;
+    }
+
+    &.thinking {
+      animation: thinkingPulse 1.5s infinite ease-in-out;
+      pointer-events: none;
+      opacity: 1;
+      visibility: visible;
+      background-color: #f39c12;
+    }
+  }
+
+  @keyframes thinkingPulse {
+    0% {
+      transform: scale(1);
+      background-color: #f39c12;
+      box-shadow: 0 0 5px rgba(243, 156, 18, 0.4);
+    }
+    50% {
+      transform: scale(1.1);
+      background-color: #ffab2e;
+      box-shadow: 0 0 20px rgba(243, 156, 18, 0.8),
+                  0 0 30px rgba(243, 156, 18, 0.4),
+                  0 0 40px rgba(243, 156, 18, 0.2);
+    }
+    100% {
+      transform: scale(1);
+      background-color: #f39c12;
+      box-shadow: 0 0 5px rgba(243, 156, 18, 0.4);
     }
   }
 
@@ -566,14 +594,49 @@
     font-weight: bold;
     z-index: 99;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease-out;
+    opacity: 0;
     transform: scale(0);
-    animation: buttonAppear 0.2s forwards;
+    pointer-events: none;
+    
+    &.visible {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+      animation: buttonAppear 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+    transform-origin: center center;
 
     &:hover {
       transform: scale(1.15);
       background-color: #e67e22;
     }
+    
+    // When clicked and thinking, position the button properly
+    &.clicked.thinking {
+      position: absolute;
+      animation: thinkingPulse 1.5s infinite ease-in-out;
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: none;
+      
+      // Position based on original button type
+      &[class*="Up"] {
+        top: -35px;
+        left: 2px;
+      }
+      
+      &[class*="Down"] {
+        bottom: -35px;
+        left: 2px;
+      }
+      
+      &[class*="Left"] {
+        left: -35px;
+        top: 2px;
+      }
+    }
+
 
     &Up {
       top: -35px;
@@ -590,15 +653,39 @@
       top: 2px;
     }
   }
-
+  
   @keyframes buttonAppear {
     0% {
       transform: scale(0);
       opacity: 0;
     }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.9;
+    }
     100% {
       transform: scale(1);
       opacity: 1;
+    }
+  }
+
+  @keyframes buttonClick {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+    30% {
+      transform: scale(1.2);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+    60% {
+      transform: scale(0.9);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      background-color: #e67e22;
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     }
   }
 
@@ -629,6 +716,26 @@
     &::placeholder {
       color: #f5b041;
       font-style: italic;
+    }
+  }
+
+  .savedTime {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f39c12;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    z-index: 101;
+
+    &.visible {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-5px);
     }
   }
 
