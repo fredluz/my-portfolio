@@ -75,9 +75,8 @@ export function TeacherZeroContent() {
         <div className={styles.sectionContainer}>
           <h2>Uma Nova Visão Para a Educação</h2>
           <p>
-           O TeacherZero não é apenas mais uma ferramenta. É o início da tecnologia que
-           revoluciona a educação. A nossa missão é clara: 
-            libertar educadores de trabalhos entediantes e devolver-lhes o que realmente importa: 
+           O início da tecnologia que revoluciona a pedagogia. A nossa missão é clara: 
+            libertar educadores de trabalhos entediantes e monótonos, devolvendo-lhes o que realmente importa: 
             <strong> tempo para ensinar e inspirar</strong>.
           </p>
         </div>
@@ -102,7 +101,7 @@ export function TeacherZeroContent() {
             É um trabalho necessário mas entediante, a que não podemos escapar. Como lavar a roupa.
           </p>
           <div className={styles.eyeCatchingLine}>
-            Mas podes recuperar os teus domingos
+            Mas connosco podes recuperar os teus domingos
           </div>
         </div>
       </section>
@@ -279,7 +278,7 @@ export function TeacherZeroContent() {
 
           <p className={styles.demoIntro}>
             Experimenta por ti próprio. A demo interativa abaixo permite-te sentir 
-            a <strong>fluidez da interface</strong>que torna o refinamento de questões tão intuitivo.
+            a <strong>fluidez da interface</strong> que torna o refinamento de questões tão intuitivo.
           </p>
           
           <div className={styles.demoContainer}>
