@@ -1,7 +1,7 @@
 // Mark as Client Component
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Card, Logo } from "@/once-ui/components";
 import styles from "../page.module.scss";
 
@@ -34,6 +34,39 @@ function useIntersectionObserver() {
 
 export function TeacherZeroContent() {
   useIntersectionObserver();
+  
+  const [showRefinementButtons, setShowRefinementButtons] = useState(false);
+  const [isRegenerateMode, setIsRegenerateMode] = useState(false);
+  const [showPromptInput, setShowPromptInput] = useState(false);
+  const [customPrompt, setCustomPrompt] = useState('');
+  const [currentQuestion, setCurrentQuestion] = useState(
+    'Qual é a principal função da mitocôndria na célula?'
+  );
+
+  const handleMainButtonClick = () => {
+    if (!isRegenerateMode) {
+      setShowRefinementButtons(true);
+      setIsRegenerateMode(true);
+    } else {
+      // Simulate regeneration
+      setCurrentQuestion('Descreva o papel da mitocôndria na produção de energia celular.');
+      setShowRefinementButtons(false);
+      setIsRegenerateMode(false);
+    }
+  };
+
+  const handleRefinementClick = (type: 'harder' | 'easier' | 'different') => {
+    // Simulate different refinements
+    const refinements = {
+      harder: 'Analise como as disfunções mitocondriais afetam o metabolismo celular e relacione com doenças metabólicas.',
+      easier: 'Liste três características principais da mitocôndria e explique porque ela é chamada de "central energética" da célula.',
+      different: 'Compare o processo de produção de energia nas mitocôndrias com a fotossíntese nos cloroplastos.'
+    };
+
+    setCurrentQuestion(refinements[type]);
+    setShowRefinementButtons(false);
+    setIsRegenerateMode(false);
+  };
   
   return (
     <>
@@ -122,7 +155,7 @@ export function TeacherZeroContent() {
       {/* Comparison Section */}
       <section className={`${styles.section} ${styles.comparison} ${styles.fadeIn}`}>
         <div className={styles.sectionContainer}>
-          <h2>Comparação entre métodos de ensino</h2>
+          <h2>Comparação entre métodos</h2>
           <div className={styles.grid}>
             <div className={styles.header}>Métodos</div>
             <div className={styles.header}>Métodos Tradicionais</div>
@@ -191,6 +224,87 @@ export function TeacherZeroContent() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Interactive Menu Demo Section */}
+      <section className={`${styles.section} ${styles.spatialMenu} ${styles.fadeIn}`}>
+        <div className={styles.sectionContainer}>
+          <h2>Motor de Melhoria: IA ao Alcance de Todos</h2>
+          <p className={styles.featureIntro}>
+          O nosso <strong>Motor de Melhoria</strong> revoluciona a forma como interages com a IA, transformando um processo trabalhoso num menu intuitivo de refinamento pedagógico.
+          </p>
+         
+          <div className={styles.demoContainer}>
+            <div className={styles.questionHeader}>
+              <div className={styles.questionTitleRow}>
+                <span
+                  className={styles.typeIcon}
+                  title="Resposta Curta"
+                >
+                  ✎
+                </span>
+                <h3 className={styles.questionTitle}>Questão 1</h3>
+              </div>
+            </div>
+
+            <div className={styles.questionContent}>
+              {currentQuestion}
+            </div>
+            
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <div className={styles.refinementEngine}>
+                <button 
+                  className={`${styles.editLlmButton} ${isRegenerateMode ? styles.regenerateMode : ''}`}
+                  title={isRegenerateMode ? "Regenerar questão" : "Clica para começar a refinar"}
+                  onClick={handleMainButtonClick}
+                >
+                  {isRegenerateMode ? '↻' : '❈'}
+                </button>
+
+                {showRefinementButtons && (
+                  <>
+                    <button
+                      className={`${styles.refineButton} ${styles.refineButtonUp}`}
+                      title="Mais Difícil"
+                      onClick={() => handleRefinementClick('harder')}
+                    >
+                      ↑
+                    </button>
+                    <button
+                      className={`${styles.refineButton} ${styles.refineButtonDown}`}
+                      title="Mais Fácil"
+                      onClick={() => handleRefinementClick('easier')}
+                    >
+                      ↓
+                    </button>
+                    <button
+                      className={`${styles.refineButton} ${styles.refineButtonLeft}`}
+                      title="Tópico Diferente"
+                      onClick={() => handleRefinementClick('different')}
+                    >
+                      ↜
+                    </button>
+                  </>
+                )}
+
+                {showPromptInput && (
+                  <input 
+                    type="text"
+                    className={styles.llmPromptInput}
+                    value={customPrompt}
+                    onChange={(e) => setCustomPrompt(e.target.value)}
+                    placeholder="Como gostarias de refinar esta questão?"
+                    autoFocus
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+         <p className={styles.featureSubDetails}>
+            O TeacherZero é mais que uma interface - é um <strong>co-piloto pedagógico</strong> que entende o contexto educacional e te ajuda a criar questões que verdadeiramente desafiam e desenvolvem o pensamento crítico dos alunos.
+          </p>
+          
       </section>
 
       {/* Features Section */}
