@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Card } from "@/once-ui/components";
+import { Card, Logo } from "@/once-ui/components";
 import styles from "../page.module.scss";
 
 // Performance optimization: Fade-in animation using Intersection Observer
@@ -38,7 +38,7 @@ export function TeacherZeroContent() {
   return (
     <>
       {/* Vision Section */}
-      <section className={`${styles.section} ${styles.vision} ${styles.fadeIn}`}>
+      <section className={`${styles.section} ${styles.vision}`}>
         <div className={styles.sectionContainer}>
           <h2>Uma Nova Visão Para a Educação</h2>
           <p>
@@ -50,15 +50,27 @@ export function TeacherZeroContent() {
         </div>
       </section>
 
+      {/* Logo Section */}
+      <section className={`${styles.section} ${styles.logo} ${styles.fadeIn}`}>
+        <div className={styles.sectionContainer}>
+          <div className={styles.logoContainer}>
+            <img src="/trademark/TZLogo.png" alt="TeacherZero Icon" />
+          </div>
+        </div>
+      </section>
+
       {/* Problem Section */}
       <section className={`${styles.section} ${styles.problem} ${styles.fadeIn}`}>
         <div className={styles.sectionContainer}>
           <h2>O Problema Silencioso</h2>
           <p>
-            Sabemos que criar fichas, testes e materiais de avaliação consome demasiado tempo. 
+            Sabemos que criar fichas, testes e outros materiais de avaliação consome demasiado tempo. 
             Tempo que podias usar para preparar aulas ou dar atenção cuidada a cada um dos teus alunos. 
             É um trabalho necessário mas entediante, a que não podemos escapar. Como lavar a roupa.
           </p>
+          <div className={styles.eyeCatchingLine}>
+            Mas podes recuperar os teus domingos
+          </div>
         </div>
       </section>
       
@@ -68,7 +80,9 @@ export function TeacherZeroContent() {
           <h2>A Solução - Apresentamos o TeacherZero</h2>
           <div className={styles.videoContainer}>
             <div className={styles.videoPlaceholder}>
-              <div className={styles.videoComingSoon}>Vídeo de 30s em breve</div>
+              <div className={styles.videoComingSoon}> O TeacherZero cria uma ficha completa em 30 segundos</div>
+              <span className={styles.playIcon}>▶️</span>
+                
             </div>
           </div>
           <p>
@@ -88,7 +102,7 @@ export function TeacherZeroContent() {
           <h2>IA Ética: Professores Primeiro</h2>
           <p>
             Ao contrário das gigantes Big Tech que criam ferramentas sem considerar o seu impacto 
-            real, o TeacherZero nasceu do respeito e genuína gratidão pelos educadores.
+            real, o TeacherZero <strong> nasceu do respeito e genuína gratidão pelos educadores</strong>.
           </p>
           <p>
             Estou onde estou hoje graças a professores extraordinários que investiram em mim. 
@@ -98,9 +112,42 @@ export function TeacherZeroContent() {
             <h3>A Nossa Promessa</h3>
             <p>
               O TeacherZero sempre irá valorizar e enriquecer a tua carreira docente, nunca substituí-la. 
-              A nossa missão é fundamentalmente diferente: tornar o teu ensino mais humano, 
-              mais gratificante e mais impactante, eliminando as tarefas repetitivas.
+              A nossa missão é fundamentalmente diferente: tornar o ensino mais impactante, 
+              mais gratificante e <strong>mais humano</strong>, eliminando as tarefas repetitivas.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Section */}
+      <section className={`${styles.section} ${styles.comparison} ${styles.fadeIn}`}>
+        <div className={styles.sectionContainer}>
+          <h2>Comparação entre métodos de ensino</h2>
+          <div className={styles.grid}>
+            <div className={styles.header}>Métodos</div>
+            <div className={styles.header}>Métodos Tradicionais</div>
+            <div className={styles.header}>ChatGPT & Outras IA Genéricas</div>
+            <div className={`${styles.header} ${styles.highlight}`}>TeacherZero</div>
+
+            <div className={styles.cell}>Tempo para criar uma ficha</div>
+            <div className={styles.cell}>1-3 horas</div>
+            <div className={styles.cell}>20-40 minutos</div>
+            <div className={`${styles.cell} ${styles.highlight}`}>2-5 minutos</div>
+
+            <div className={styles.cell}>Conhecimento técnico necessário</div>
+            <div className={styles.cell}>Básico</div>
+            <div className={styles.cell}>Avançado (prompts complexos)</div>
+            <div className={`${styles.cell} ${styles.highlight}`}>Nenhum (interface No-Prompt)</div>
+
+            <div className={styles.cell}>Qualidade pedagógica</div>
+            <div className={styles.cell}>Alta</div>
+            <div className={styles.cell}>Baixa</div>
+            <div className={`${styles.cell} ${styles.highlight}`}>Augmentada</div>
+
+            <div className={styles.cell}>Adaptado ao teu currículo</div>
+            <div className={styles.cell}>Sim</div>
+            <div className={styles.cell}>Não</div>
+            <div className={`${styles.cell} ${styles.highlight}`}>Sempre</div>
           </div>
         </div>
       </section>
@@ -116,7 +163,7 @@ export function TeacherZeroContent() {
               <div className={styles.stepVideoPlaceholder}>
                 <div className={styles.stepPlaceholderText}>Vídeo rápido</div>
               </div>
-              <p>Carrega um PowerPoint, PDF ou outro documento com o tópico a abordar.  O TeacherZero analisa o conteúdo para criar perguntas relevantes</p>
+              <p>Carrega um PowerPoint, PDF ou outro documento com o tópico a abordar.  O TeacherZero<strong> analisa o conteúdo </strong>para criar perguntas relevantes</p>
             </div>
             <div className={`${styles.step} ${styles.step2}`}>
               <div className={styles.stepNumber}>2</div>
@@ -124,7 +171,7 @@ export function TeacherZeroContent() {
               <div className={styles.stepVideoPlaceholder}>
                 <div className={styles.stepPlaceholderText}>Vídeo rápido</div>
               </div>
-              <p>Seleciona os tipos de perguntas, bem como a sua dificuldade, e clica em gerar. A IA faz o trabalho entediante em segundos.</p>
+              <p>Seleciona os tipos de perguntas, bem como a sua dificuldade, e clica em gerar. <strong>A IA faz o trabalho entediante em segundos</strong>.</p>
             </div>
             <div className={`${styles.step} ${styles.step3}`}>
               <div className={styles.stepNumber}>3</div>
@@ -132,7 +179,7 @@ export function TeacherZeroContent() {
               <div className={styles.stepVideoPlaceholder}>
                 <div className={styles.stepPlaceholderText}>Vídeo rápido</div>
               </div>
-              <p>O TeacherZero desbloqueia todo o poder da IA com botões simples e intuitivos. <strong>Tu manténs sempre o controlo</strong> - a IA gera os primeiros 80%, e o teu conhecimento especializado aperfeiçoa os últimos 20%.</p>
+              <p>O TeacherZero desbloqueia todo o poder da IA com botões simples e intuitivos. <strong> Tu manténs sempre o controlo </strong> - a IA gera os primeiros 80%, e o teu conhecimento especializado aperfeiçoa os últimos 20%.</p>
             </div>
             <div className={`${styles.step} ${styles.step4}`}>
               <div className={styles.stepNumber}>4</div>
@@ -140,43 +187,52 @@ export function TeacherZeroContent() {
               <div className={styles.stepVideoPlaceholder}>
                 <div className={styles.stepPlaceholderText}>Vídeo rápido</div>
               </div>
-              <p>Exporta imediatamente em três cliques após refinar a tua ficha. Em 3 cliques, os teus alunos podem começar a escrever.</p>
+              <p>Exporta imediatamente após refinar a tua ficha.  <strong>Em 3 cliques</strong>, os teus alunos podem começar a escrever.</p>
             </div>
           </div>
         </div>
-      </section>{/* Features Section */}
+      </section>
+
+      {/* Features Section */}
       <section className={`${styles.section} ${styles.features} ${styles.fadeIn}`}>
         <div className={styles.sectionContainer}>
-          <h2>O Que Torna o TeacherZero Único?</h2>
-          <p> aqui eu devia falar sobre como já há quem tente usar o chatgpt mas não vale a pena porque não é a interface correta e continua a dar imenso trabalho </p>
+          <h2>O Que Torna o TeacherZero Especial?</h2>
+          <p> O TeacherZero usa IA de uma forma única. As soluções atuais são demasiado genéricas para uma tarefa tão complexa, e a qualidade dos resultados é dependente de competência técnica e não habilidade pedagógica. <strong>O TeacherZero foi criado para ser fácil de usar. </strong> </p>
           <div className={styles.featureCards}>
             <div className={styles.featureColumn}>
               <h3>Interface 100% Intuitiva</h3>
               <div className={styles.featureVideoPlaceholder}>
-                <div className={styles.featurePlaceholderText}>Vídeo demonstrativo</div>
+                <div className={styles.featurePlaceholderText}>Video demo</div>
               </div>
-              <p>Se sabes usar um menu, sabes usar o TeacherZero. Criámos uma interface visual que transforma as tuas necessidades em ações de IA complexas, sem que precises de escrever uma única frase. Foco na facilidade.</p>
-            </div>
-            <div className={styles.featureColumn}>
-              <h3>Velocidade com Qualidade</h3>
-              <div className={styles.featureVideoPlaceholder}>
-                <div className={styles.featurePlaceholderText}>Vídeo demonstrativo</div>
-              </div>
-              <p>Gera rascunhos em segundos. Depois, usa botões claros para refinar perguntas específicas rapidamente. A nossa filosofia: IA gera 80%, tu refinas os 20% finais com o conhecimento que só a experiência tem. Controlo e rapidez.</p>
-            </div>            
-            <div className={styles.featureColumn}>
-              <h3>Pesquisa Inteligente de Imagens</h3>
-              <div className={styles.featureVideoPlaceholder}>
-                <div className={styles.featurePlaceholderText}>Vídeo demonstrativo</div>
-              </div>
-              <p>Encontra imagens relevantes para as tuas fichas usando pesquisa semântica inteligente, poupando ainda mais tempo na preparação de materiais visualmente atrativos.</p>
+              <p>Se sabes usar um menu, sabes usar o TeacherZero. Criámos uma interface visual No-Prompt que transforma as tuas intenções em ações de IA complexas, <strong> sem que precises de escrever uma única frase. </strong>  Foco na facilidade.</p>
             </div>
             <div className={styles.featureColumn}>
               <h3>Rapidez Artificial, Conhecimento Humano</h3>
               <div className={styles.featureVideoPlaceholder}>
                 <div className={styles.featurePlaceholderText}>Vídeo demonstrativo</div>
               </div>
-              <p>O TeacherZero garante a qualidade pedagógica das fichas criadas, porque toda a informação é fornecida pelo educador, não pelo modelo IA. Ao contrário de alguns outros programas, 'alucinações' não são um problema.</p>
+              <p>Gera rascunhos em segundos. Depois, usa botões claros para refinar perguntas específicas rapidamente. A nossa filosofia: <strong>IA gera 80%, tu refinas os 20% finais </strong> com o conhecimento que só a experiência tem.</p>
+            </div>            
+            <div className={styles.featureColumn}>
+              <h3>Pesquisa Inteligente de Imagens</h3>
+              <div className={styles.featureVideoPlaceholder}>
+                <div className={styles.featurePlaceholderText}>Vídeo demonstrativo</div>
+              </div>
+              <p>Usando pesquisa semântica inteligente, o TeacherZero procura <strong>imagens relevantes para as tuas fichas com base numa simples descrição</strong>, poupando ainda mais tempo na preparação de materiais visualmente atrativos.</p>
+            </div>
+            <div className={styles.featureColumn}>
+              <h3>O Educador tem o Comando</h3>
+              <div className={styles.featureVideoPlaceholder}>
+                <div className={styles.featurePlaceholderText}>Vídeo demonstrativo</div>
+              </div>
+              <p>O TeacherZero garante a qualidade pedagógica das fichas criadas, <strong>porque toda a informação é fornecida pelo educador, não pelo modelo IA.</strong> Ao contrário de IA genérica, 'alucinações' não são um problema.</p>
+            </div>
+            <div className={styles.featureColumn}>
+              <h3>Todos os Tipos de Perguntas</h3>
+              <div className={styles.featureVideoPlaceholder}>
+                <div className={styles.featurePlaceholderText}>Vídeo demonstrativo</div>
+              </div>
+              <p> Até agora, software de criação de avaliações só conseguia criar perguntas de escolha múltipla e V/F. Mas a tecnologia avançada do TeacherZero permite a criação de <strong> 6 tipos de pergunta, incluindo resposta livre, </strong> com mais a caminho. </p>
             </div>
           </div>
         </div>
@@ -243,11 +299,10 @@ export function TeacherZeroContent() {
       {/* Beta Access Section */}
       <section className={`${styles.section} ${styles.beta} ${styles.fadeIn}`}>
         <div className={styles.sectionContainer}>
-          <h2>Junta-te a Nós Nesta Jornada Transformadora</h2>
+          <h2>Programa Exclusivo: Junta-te a Nós</h2>
           <p>
-            O TeacherZero está em fase Beta Avançada. Já validámos o enorme 
-            interesse e potencial de transformação. Estamos a trabalhar para adicionar 
-            suporte para fórmulas matemáticas e mais funcionalidades em breve.
+            O TeacherZero está em fase Beta Avançada. Já validámos o 
+            interesse e potencial de transformação na rotina dos educadores. <strong> Mas queremos ir ainda mais longe.</strong>
           </p>
           <div className={styles.betaSignup}>
             <h3>Sê Pioneiro da Mudança na Educação</h3>

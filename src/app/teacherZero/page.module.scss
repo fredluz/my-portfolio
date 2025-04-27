@@ -1,6 +1,68 @@
 // Performance-optimized variables with modern color scheme
 // Moved :root variables to globals.css
 
+// Comparison section styles
+.comparison {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: linear-gradient(135deg, #f5f7ff 0%, #e8eeff 100%);
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .header {
+    text-align: center;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    background: white;
+    border-radius: var(--tz-border-radius);
+    box-shadow: var(--tz-shadow-sm);
+    color: #ffa102;
+
+    &.highlight {
+      background: #ffa102;
+      -webkit-text-fill-color: #ffffff;
+      -webkit-text-stroke: 0.5px black;
+      font-size: 2rem;
+      
+    }
+  }
+
+  .cell {
+    padding: 1rem;
+    text-align: center;
+    background: white;
+    border-radius: var(--tz-border-radius);
+    box-shadow: var(--tz-shadow-sm);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.highlight {
+      background: linear-gradient(135deg, #ffb733 0%, #ffa102 100%);
+      -webkit-text-fill-color: #ffffff;
+      -webkit-text-stroke: 0.4px black;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+  }
+}
+
+
 // Base styles
 .container {
   width: 100%;
@@ -57,7 +119,7 @@
   
   .heroTitle {
     margin-bottom: 1.5rem;
-    background: linear-gradient(90deg, var(--tz-primary) 0%, var(--tz-primary-dark) 100%);
+    background: linear-gradient(90deg, #ffa102 0%, #e68a00 100%);
     -webkit-background-clip: text;
     /* stylelint-disable-next-line property-no-unknown */
     -webkit-text-fill-color: transparent; // Needed for text gradient effect
@@ -93,25 +155,26 @@
 // CTA Button
 .ctaButton {
   display: inline-block;
-  background: linear-gradient(90deg, var(--tz-primary) 0%, var(--tz-primary-light) 100%);
-  color: white;
+  background: #ffa102;
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 800;
   text-decoration: none;
   padding: 1rem 2rem;
   border-radius: 50px;
-  box-shadow: var(--tz-shadow-md), 0 10px 20px -5px rgba(57, 85, 232, 0.3);
+  box-shadow: var(--tz-shadow-md);
+  -webkit-text-fill-color: #ffffff;
+  -webkit-text-stroke: 0.5px black;
   transition: var(--tz-transition);
   
   &:hover, &:focus {
-    background: linear-gradient(90deg, var(--tz-primary-light) 0%, var(--tz-primary) 100%);
-    box-shadow: var(--tz-shadow-lg), 0 15px 30px -5px rgba(57, 85, 232, 0.4);
+    background: #ffb733;
+    box-shadow: var(--tz-shadow-lg);
     transform: translateY(-2px);
   }
   
   &:active {
     transform: translateY(0);
-    box-shadow: var(--tz-shadow-sm), 0 5px 15px -5px rgba(57, 85, 232, 0.5);
+    box-shadow: var(--tz-shadow-sm);
   }
 }
 
@@ -127,17 +190,63 @@
 // Vision section
 .vision {
   text-align: center;
+  padding-top: 6rem; // Increased top padding since it's now first
+  
+  h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    background: linear-gradient(90deg, var(--tz-primary) 0%, var(--tz-primary-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 2rem;
+  }
   
   p {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    line-height: 1.6;
+  }
+}
+
+// Logo section
+.logo {
+  text-align: center;
+  padding: 4rem 0;
+  margin-top: 2rem;
+  
+  .logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+    img {
+      height: 500px;
+      width: auto;
+      
+      @media (max-width: 768px) {
+        height: 200px;
+      }
+    }
   }
 }
 
 // Problem section with stats
 .problem {
+  .eyeCatchingLine {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    text-align: center;
+    margin: 3rem auto 0;
+    max-width: 800px;
+    background: linear-gradient(90deg, var(--tz-primary) 0%, var(--tz-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .stats {
     display: flex;
     flex-wrap: wrap;
@@ -416,7 +525,7 @@
 
 // Beta access section
 .beta {
-  background: linear-gradient(135deg, #f0f5ff 0%, #e0e8ff 100%);
+  background: linear-gradient(135deg, #e8eeff 0%, #9db1ff 100%);
   
   .betaSignup {
     max-width: 700px;
