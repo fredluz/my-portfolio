@@ -86,7 +86,7 @@ export function TeacherZeroContent() {
       <section className={`${styles.section} ${styles.logo} ${styles.fadeIn}`}>
         <div className={styles.sectionContainer}>
           <div className={styles.logoContainer}>
-            <img src="/trademark/TZLogo.png" alt="TeacherZero Icon" />
+            <img src="images/TZ_landing/TZLogo.png" alt="TeacherZero Icon" />
           </div>
         </div>
       </section>
