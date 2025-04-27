@@ -112,11 +112,15 @@ export function TeacherZeroContent() {
         <div className={styles.sectionContainer}>
           <h2>A Solução - Apresentamos o TeacherZero</h2>
           <div className={styles.videoContainer}>
-            <div className={styles.videoPlaceholder}>
-              <div className={styles.videoComingSoon}> O TeacherZero cria uma ficha completa em 30 segundos</div>
-              <span className={styles.playIcon}>▶️</span>
-                
-            </div>
+            <video 
+              controls
+              className={styles.video}
+              playsInline
+              preload="metadata"
+            >
+              <source src="/images/TZ_landing/demo_geral.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
           <p>
             TeacherZero é um Agente de Inteligência Artificial revolucionário para educadores, 
@@ -136,8 +140,6 @@ export function TeacherZeroContent() {
           <p>
             Ao contrário das gigantes Big Tech que criam ferramentas sem considerar o seu impacto 
             real, o TeacherZero <strong> nasceu do respeito e genuína gratidão pelos educadores</strong>.
-          </p>
-          <p>
             Estou onde estou hoje graças a professores extraordinários que investiram em mim. 
             Criei o TeacherZero para os honrar e apoiar a próxima geração de educadores.
           </p>
@@ -192,17 +194,30 @@ export function TeacherZeroContent() {
           <div className={styles.steps}>
             <div className={`${styles.step} ${styles.step1}`}>
               <div className={styles.stepNumber}>1</div>
-              <h3>Envia o Material</h3>
+              <h3>Carrega o teu Material</h3>
               <div className={styles.stepVideoPlaceholder}>
-                <div className={styles.stepPlaceholderText}>Vídeo rápido</div>
+                <img 
+                  src="/images/TZ_landing/filetypes.png"
+                  alt="Question types"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
-              <p>Carrega um PowerPoint, PDF ou outro documento com o tópico a abordar.  O TeacherZero<strong> analisa o conteúdo </strong>para criar perguntas relevantes</p>
+              <p>Um PowerPoint, PDF ou simplesmente cola texto com os tópicos a abordar.  O TeacherZero<strong> analisa o conteúdo </strong>para criar perguntas relevantes</p>
             </div>
             <div className={`${styles.step} ${styles.step2}`}>
               <div className={styles.stepNumber}>2</div>
               <h3>Escolhe e Gera</h3>
               <div className={styles.stepVideoPlaceholder}>
-                <div className={styles.stepPlaceholderText}>Vídeo rápido</div>
+                <video 
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                >
+                  <source src="/images/TZ_landing/questiontypes.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <p>Seleciona os tipos de perguntas, bem como a sua dificuldade, e clica em gerar. <strong>A IA faz o trabalho entediante em segundos</strong>.</p>
             </div>
@@ -210,7 +225,16 @@ export function TeacherZeroContent() {
               <div className={styles.stepNumber}>3</div>
               <h3>Refina até à Perfeição</h3>
               <div className={styles.stepVideoPlaceholder}>
-                <div className={styles.stepPlaceholderText}>Vídeo rápido</div>
+               <video 
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                >
+                  <source src="/images/TZ_landing/editmanual.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <p>O TeacherZero desbloqueia todo o poder da IA com botões simples e intuitivos. <strong> Tu manténs sempre o controlo </strong> - a IA gera os primeiros 80%, e o teu conhecimento especializado aperfeiçoa os últimos 20%.</p>
             </div>
@@ -218,7 +242,15 @@ export function TeacherZeroContent() {
               <div className={styles.stepNumber}>4</div>
               <h3>Exportação Rápida</h3>
               <div className={styles.stepVideoPlaceholder}>
-                <div className={styles.stepPlaceholderText}>Vídeo rápido</div>
+                <video 
+                  autoPlay
+                  loop
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  playsInline
+                  preload="metadata">
+                  <source src="/images/TZ_landing/export.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <p>Exporta imediatamente após refinar a tua ficha.  <strong>Em 3 cliques</strong>, os teus alunos podem começar a escrever.</p>
             </div>
@@ -233,7 +265,23 @@ export function TeacherZeroContent() {
           <p className={styles.featureIntro}>
           O nosso <strong>Motor de Melhoria</strong> revoluciona a forma como interages com a IA, transformando um processo trabalhoso num menu intuitivo de refinamento pedagógico.
           </p>
-         
+          <div className={styles.featureVideo}>
+            <video 
+              loop 
+              autoPlay
+              muted 
+              playsInline
+              controls
+            >
+              <source src="/images/TZ_landing/MotorMelhoria.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <p className={styles.demoIntro}>
+            Experimenta por ti próprio. A demo interativa abaixo permite-te sentir 
+            a <strong>fluidez da interface</strong>que torna o refinamento de questões tão intuitivo.
+          </p>
+          
           <div className={styles.demoContainer}>
             <div className={styles.questionHeader}>
               <div className={styles.questionTitleRow}>
@@ -302,7 +350,7 @@ export function TeacherZeroContent() {
           </div>
         </div>
          <p className={styles.featureSubDetails}>
-            O TeacherZero é mais que uma interface - é um <strong>co-piloto pedagógico</strong> que entende o contexto educacional e te ajuda a criar questões que verdadeiramente desafiam e desenvolvem o pensamento crítico dos alunos.
+            O TeacherZero é mais que uma interface - é um <strong>co-piloto pedagógico</strong> que entende o contexto educacional e te ajuda a criar questões que verdadeiramente desafiam e desenvolvem o conhecimento dos alunos.
           </p>
           
       </section>
@@ -311,41 +359,25 @@ export function TeacherZeroContent() {
       <section className={`${styles.section} ${styles.features} ${styles.fadeIn}`}>
         <div className={styles.sectionContainer}>
           <h2>O Que Torna o TeacherZero Especial?</h2>
-          <p> O TeacherZero usa IA de uma forma única. As soluções atuais são demasiado genéricas para uma tarefa tão complexa, e a qualidade dos resultados é dependente de competência técnica e não habilidade pedagógica. <strong>O TeacherZero foi criado para ser fácil de usar. </strong> </p>
           <div className={styles.featureCards}>
             <div className={styles.featureColumn}>
               <h3>Interface 100% Intuitiva</h3>
-              <div className={styles.featureVideoPlaceholder}>
-                <div className={styles.featurePlaceholderText}>Video demo</div>
-              </div>
               <p>Se sabes usar um menu, sabes usar o TeacherZero. Criámos uma interface visual No-Prompt que transforma as tuas intenções em ações de IA complexas, <strong> sem que precises de escrever uma única frase. </strong>  Foco na facilidade.</p>
             </div>
             <div className={styles.featureColumn}>
               <h3>Rapidez Artificial, Conhecimento Humano</h3>
-              <div className={styles.featureVideoPlaceholder}>
-                <div className={styles.featurePlaceholderText}>Vídeo demonstrativo</div>
-              </div>
               <p>Gera rascunhos em segundos. Depois, usa botões claros para refinar perguntas específicas rapidamente. A nossa filosofia: <strong>IA gera 80%, tu refinas os 20% finais </strong> com o conhecimento que só a experiência tem.</p>
             </div>            
             <div className={styles.featureColumn}>
               <h3>Pesquisa Inteligente de Imagens</h3>
-              <div className={styles.featureVideoPlaceholder}>
-                <div className={styles.featurePlaceholderText}>Vídeo demonstrativo</div>
-              </div>
               <p>Usando pesquisa semântica inteligente, o TeacherZero procura <strong>imagens relevantes para as tuas fichas com base numa simples descrição</strong>, poupando ainda mais tempo na preparação de materiais visualmente atrativos.</p>
             </div>
             <div className={styles.featureColumn}>
               <h3>O Educador tem o Comando</h3>
-              <div className={styles.featureVideoPlaceholder}>
-                <div className={styles.featurePlaceholderText}>Vídeo demonstrativo</div>
-              </div>
               <p>O TeacherZero garante a qualidade pedagógica das fichas criadas, <strong>porque toda a informação é fornecida pelo educador, não pelo modelo IA.</strong> Ao contrário de IA genérica, 'alucinações' não são um problema.</p>
             </div>
             <div className={styles.featureColumn}>
               <h3>Todos os Tipos de Perguntas</h3>
-              <div className={styles.featureVideoPlaceholder}>
-                <div className={styles.featurePlaceholderText}>Vídeo demonstrativo</div>
-              </div>
               <p> Até agora, software de criação de avaliações só conseguia criar perguntas de escolha múltipla e V/F. Mas a tecnologia avançada do TeacherZero permite a criação de <strong> 6 tipos de pergunta, incluindo resposta livre, </strong> com mais a caminho. </p>
             </div>
           </div>
@@ -421,9 +453,9 @@ export function TeacherZeroContent() {
           <div className={styles.betaSignup}>
             <h3>Sê Pioneiro da Mudança na Educação</h3>
             <p>
-              Estamos a abrir acesso a um número limitado de educadores para o nosso 
-              Programa Parceiros Beta. Ajuda-nos a moldar o futuro do ensino e ganha 
-              acesso antecipado com condições benéficas e especiais.
+              Estamos a abrir acesso a <strong>100</strong> educadores para o nosso 
+              Programa Parceiros Beta. Candidata-te e habilita-te a ganhar 
+              acesso antecipado ao futuro.
             </p>
             <a 
               href="https://docs.google.com/forms/d/e/1FAIpQLSea_BzP21b7JB2ekIgCU--FN-qkrcLRQkoc71VIs02ctv-TRg/viewform?usp=dialog" 

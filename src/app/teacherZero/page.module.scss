@@ -306,20 +306,12 @@
     overflow: hidden;
     border-radius: var(--tz-border-radius);
     box-shadow: var(--tz-shadow-md);
-  }
-  
-  .videoPlaceholder {
-    aspect-ratio: 16 / 9;
-    background: linear-gradient(135deg, #e8eeff 0%, #d0d8ff 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    
-    .videoComingSoon {
-      font-size: 1.25rem;
-      color: var(--tz-primary);
-      opacity: 0.7;
+
+    .video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
     }
   }
   
@@ -393,8 +385,22 @@
 }
 
 // Spatial menu section
-.spatialMenu {
-  .featureIntro {
+  .spatialMenu {
+    .featureVideo {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      border-radius: var(--tz-border-radius);
+      overflow: hidden;
+      box-shadow: var(--tz-shadow-md);
+
+      video {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    .featureIntro {
     font-size: 1.25rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -412,6 +418,19 @@
     max-width: 700px;
     margin: 0 auto 1.5rem;
     text-align: center;
+  }
+
+  .demoIntro {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #34495e;
+    max-width: 700px;
+    margin: 2rem auto;
+    text-align: center;
+    
+    strong {
+      color: #e67e22;
+    }
   }
 
   .featureSubDetails {
