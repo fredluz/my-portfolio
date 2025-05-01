@@ -1,10 +1,12 @@
 import styles from "./page.module.scss";
-import { TeacherZeroContent } from "./components/TeacherZeroContent";
+// Import the new English content component
+import { TeacherZeroENContent } from "./components/TeacherZeroENContent"; 
 
 export default function TeacherZero() {
   return (
     <div className={styles.container}>
-      <TeacherZeroContent />
+      {/* Use the English content component */}
+      <TeacherZeroENContent />
     </div>
   );
 }

@@ -2,8 +2,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Card, Logo } from "@/once-ui/components";
+// import { Card, Logo } from "@/once-ui/components"; // Card and Logo not used directly here
 import styles from "../page.module.scss";
+import { LanguageSwitcher } from "./LanguageSwitcher"; // Import the switcher
 
 // Performance optimization: Fade-in animation using Intersection Observer
 function useIntersectionObserver() {
@@ -101,10 +102,11 @@ export function TeacherZeroContent() {
       {/* Vision Section */}
       <section className={`${styles.section} ${styles.vision}`}>
         <div className={styles.sectionContainer}>
+          <LanguageSwitcher /> {/* Add switcher here */}
           <h2>Uma Nova Visão Para a Educação</h2>
           <p>
-           O início da tecnologia que revoluciona a pedagogia. A nossa missão é clara: 
-            libertar educadores de trabalhos entediantes e monótonos, devolvendo-lhes o que realmente importa: 
+           O início da tecnologia que revoluciona a pedagogia. A nossa missão é
+           libertar educadores de trabalhos entediantes e monótonos, devolvendo-lhes o que realmente importa: 
             <strong> tempo para ensinar e inspirar</strong>.
           </p>
         </div>
@@ -126,7 +128,7 @@ export function TeacherZeroContent() {
           <p>
             Sabemos que criar fichas, testes e outros materiais de avaliação consome demasiado tempo. 
             Tempo que podias usar para preparar aulas ou dar atenção cuidada a cada um dos teus alunos. 
-            É um trabalho necessário mas entediante, a que não podemos escapar. Como lavar a roupa.
+            É um trabalho entediante mas necessário, a que não podemos escapar. Como lavar a roupa.
           </p>
           <div className={styles.eyeCatchingLine}>
             Mas connosco podes recuperar os teus domingos
@@ -153,7 +155,7 @@ export function TeacherZeroContent() {
             TeacherZero é um Agente de Inteligência Artificial revolucionário para educadores, 
             concebido não para te substituir, mas para <strong>amplificar o teu talento</strong>. 
             A nossa missão: devolver-te horas de trabalho, permitindo criares 
-            materiais didáticos de alta qualidade não em horas, mas em minutos. 
+            materiais de avaliação de alta qualidade não em horas, mas em minutos. 
           </p>
           <p className={styles.highlight}>
             <strong>Isto não é sobre automatizar o ensino. É sobre potenciar o teu impacto como educador.</strong>
@@ -221,7 +223,7 @@ export function TeacherZeroContent() {
           <div className={styles.steps}>
             <div className={`${styles.step} ${styles.step1}`}>
               <div className={styles.stepNumber}>1</div>
-              <h3>Carrega o teu Material</h3>
+              <h3>Fornece a Matéria</h3>
               <div className={styles.stepVideoPlaceholder}>
                 <img 
                   src="/images/TZ_landing/filetypes.png"
@@ -290,7 +292,7 @@ export function TeacherZeroContent() {
         <div className={styles.sectionContainer}>
           <h2>Motor de Melhoria: IA ao Alcance de Todos</h2>
           <p className={styles.featureIntro}>
-          O nosso <strong>Motor de Melhoria</strong> revoluciona a forma como interages com a IA, transformando um processo trabalhoso num menu intuitivo de refinamento pedagógico.
+          O nosso <strong>Motor de Melhoria</strong> revoluciona a forma como interages com a IA, transformando o processo complexo do prompt engineering num menu intuitivo de refinamento pedagógico.
           </p>
           <div className={styles.featureVideo}>
             <video 
@@ -410,7 +412,7 @@ export function TeacherZeroContent() {
           <div className={styles.featureCards}>
             <div className={styles.featureColumn}>
               <h3>Interface 100% Intuitiva</h3>
-              <p>Se sabes usar um menu, sabes usar o TeacherZero. Criámos uma interface visual No-Prompt que transforma as tuas intenções em ações de IA complexas, <strong> sem que precises de escrever uma única frase. </strong>  Foco na facilidade.</p>
+              <p>Se sabes carregar num botão, sabes usar o TeacherZero. Criámos uma interface visual No-Prompt que transforma as tuas intenções em ações de IA complexas, <strong> sem que precises de escrever uma única frase. </strong>  Foco na facilidade.</p>
             </div>
             <div className={styles.featureColumn}>
               <h3>Rapidez Artificial, Conhecimento Humano</h3>
@@ -441,7 +443,7 @@ export function TeacherZeroContent() {
               <p>
                 O TeacherZero nasceu de uma conversa com um professor amigo e da minha profunda gratidão 
                 pelos educadores que moldaram o meu caminho. Sou o Fred Luz, developer focado em criar IA 
-                que serve pessoas reais, não apenas métricas corporativas. 
+                para pessoas reais, não apenas métricas corporativas. 
               </p>
               <p>
                 Estou a construir o TeacherZero para ser a ferramenta que os meus próprios professores extraordinários 
@@ -458,7 +460,7 @@ export function TeacherZeroContent() {
         <div className={styles.sectionContainer}>
           <h2>A Nossa Visão de Futuro</h2>
           <p>
-            O TeacherZero é apenas o começo. Estamos a construir um ecossistema completo para te apoiar:
+            O TeacherZero está apenas no começo. Estamos a construir um ecossistema completo para te apoiar:
           </p>
           <div className={styles.roadmap}>
 
@@ -472,19 +474,19 @@ export function TeacherZeroContent() {
             </div>
              <div className={styles.roadmapItem}>
               <h3>Exportação para LMS</h3>
-              <p>Envia as fichas completas para o Moodle, o Classroom ou o Blackboard para os teus alunos as realizarem na hora</p>
+              <p>Envia as fichas completas para o Moodle, o Classroom ou outros para os teus alunos as realizarem na hora</p>
             </div>
             <div className={styles.roadmapItem}>
               <h3>App para Smartphone</h3>
               <p>Cria os materiais de avaliação enquanto esperas pelo autocarro, recorrendo à nossa interface intuitiva No-Prompt</p>
             </div>
             <div className={styles.roadmapItem}>
-              <h3>TeacherOne</h3>
-              <p>Correção assistida por IA que te ajuda a fornecer feedback mais significativo em menos tempo</p>
-            </div>
-            <div className={styles.roadmapItem}>
               <h3>Análise de Dados</h3>
               <p>IA poderosa analisa dados anonimizados para entender exatamente onde os teus alunos precisam de mais ajuda</p>
+            </div>
+             <div className={styles.roadmapItem}>
+              <h3>TeacherOne</h3>
+              <p>Correção assistida por IA que te ajuda a fornecer feedback mais significativo em menos tempo</p>
             </div>
           </div>
         </div>
@@ -501,7 +503,7 @@ export function TeacherZeroContent() {
           <div className={styles.betaSignup}>
             <h3>Sê Pioneiro da Mudança na Educação</h3>
             <p>
-              Estamos a abrir parceria a <strong>99</strong> educadores para o nosso 
+              Para além de parcerias com instituições educativas, estamos a convidar <strong>99</strong> educadores para o nosso 
               Programa Parceiros Beta. Candidata-te e habilita-te a ganhar 
               acesso antecipado ao futuro.
             </p>

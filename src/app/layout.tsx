@@ -47,8 +47,10 @@ const primary = Inter({
   preload: true, // Prioritize loading the primary font
 });
 
+// Update FontConfig type to include className
 type FontConfig = {
   variable: string;
+  className: string; 
 };
 
 /*
@@ -85,11 +87,12 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       data-border={style.border}
       data-surface={style.surface}
       data-transition={style.transition}
+      // Apply the generated class name for the primary font, not the variable name
       className={classNames(
-        primary.variable,
-        secondary ? secondary.variable : "",
-        tertiary ? tertiary.variable : "",
-        code.variable,
+        primary.className, 
+        secondary ? secondary.className : "", // Assuming secondary/tertiary follow the same pattern if defined
+        tertiary ? tertiary.className : "",   // Assuming secondary/tertiary follow the same pattern if defined
+        code.variable, // Keep code variable if it's used differently or intended as a variable
       )}
     >
       <ToastProvider>
