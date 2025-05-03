@@ -42,7 +42,7 @@ export function TeacherZeroENContent() {
   const [showPromptInput, setShowPromptInput] = useState(false);
   const [customPrompt, setCustomPrompt] = useState('');
   const [currentQuestion, setCurrentQuestion] = useState(
-    'What is the main function of the mitochondria?' 
+    'Why is the mitochondria known as "the powerhouse of the cell"?' 
   );
   // Add states for tracking animation states
   const [isThinking, setIsThinking] = useState(false);
@@ -148,7 +148,7 @@ export function TeacherZeroENContent() {
               playsInline
               preload="metadata"
             >
-              <source src="/images/TZ_landing/demo_geral.mp4" type="video/mp4" />
+              <source src="/images/TZ_landing/TZ_quick_Demop.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -303,7 +303,7 @@ export function TeacherZeroENContent() {
           playsInline
           controls
         >
-          <source src="/images/TZ_landing/MotorMelhoria.mp4" type="video/mp4" />
+          <source src="/images/TZ_landing/question_refinement.mp4" type="video/mp4" />
         </video>
         </div>
 
