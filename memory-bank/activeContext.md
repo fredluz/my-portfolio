@@ -2,26 +2,23 @@
 
 ## 1. Current Focus
 
-*   Finalizing Minimal Viable Legal Compliance (MVLC) pages by inserting drafted text.
+*   Integrating Klaviyo form and tracking script into the TeacherZero English landing page.
 
 ## 2. Recent Changes
 
-*   Created legal compliance pages with placeholder content:
-    - `src/app/legal/privacy-policy/page.tsx` (EN)
-    - `src/app/legal/privacy-policy/pt/page.tsx` (PT)
-    - `src/app/legal/terms-conditions/page.tsx` (EN)
-    - `src/app/legal/terms-conditions/pt/page.tsx` (PT)
-*   Added links between EN/PT versions within each page.
-*   Updated `src/app/resources/config.js` to allow access to all four new legal routes.
-*   Updated `src/components/Footer.tsx` to include dynamic links to the legal pages, switching between EN/PT based on the current path.
-*   **Inserted drafted legal text (EN and PT) into the four respective pages, including user-provided contact details and jurisdiction.** (Requires legal review by user).
+*   **Klaviyo Integration:**
+    *   Added Klaviyo onsite JavaScript snippet to `src/app/layout.tsx`.
+    *   Replaced the Google Form link in the Beta signup section of `src/app/teacherZero/components/TeacherZeroENContent.tsx` with the Klaviyo form embed div (`<div class="klaviyo-form-Tv7V5D"></div>`).
+*   **MVLC Pages (Completed Previously):**
+    *   Created legal compliance pages (`privacy-policy`, `terms-conditions`) with EN/PT versions.
+    *   Inserted drafted legal text (requires user legal review).
+    *   Updated `config.js` and `Footer.tsx` for routing and linking.
 
 ## 3. Next Steps
 
-*   Confirm that all four legal pages render with the inserted text.
-*   Confirm that footer links work correctly.
-*   Remind user that the inserted text (especially PT translation) requires legal review.
-*   Update `currentTask.md` to reflect completion of MVLC text insertion.
+*   Verify the Klaviyo form displays correctly on the TeacherZero English page.
+*   Verify the Klaviyo script is loaded (e.g., check browser network tools or Klaviyo dashboard).
+*   Update `currentTask.md` (already done).
 
 ## 4. Active Decisions & Considerations
 

@@ -15,8 +15,7 @@ export const Footer = () => {
     pathname.endsWith("/pt") ||
     pathname.includes("/pt/") ||
     pathname === "/pt";
-  const privacyLink = `/legal/privacy-policy${isPt ? "/pt" : ""}`;
-  const termsLink = `/legal/terms-conditions${isPt ? "/pt" : ""}`;
+  const legalLink = `/teacherZero${isPt ? "/pt" : ""}/legal`;
 
   return (
     <Flex
@@ -74,8 +73,7 @@ export const Footer = () => {
         horizontal="center"
         vertical="center"
       >
-        <Link href={privacyLink}>Privacy Policy / Política de Privacidade</Link>
-        <Link href={termsLink}>Terms & Conditions / Termos e Condições</Link>
+        <Link href={legalLink}>Legal Information / Informação Legal</Link>
       </Flex>
       <Flex height="80" show="s"></Flex>
     </Flex>

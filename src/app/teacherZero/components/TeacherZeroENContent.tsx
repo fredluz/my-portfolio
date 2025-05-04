@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 // import { Card, Logo } from "@/once-ui/components"; // Card and Logo not used directly here
 import styles from "../page.module.scss"; // Path remains correct relative to this new file location
 import { LanguageSwitcher } from "./LanguageSwitcher"; // Import the switcher
@@ -508,7 +509,10 @@ export function TeacherZeroENContent() {
       </section>
 
       <footer className={styles.footer}>
-        <p>© {new Date().getFullYear()} TeacherZero · All rights reserved</p>
+        <div>
+          <p>© {new Date().getFullYear()} TeacherZero · All rights reserved</p>
+          <Link href="/teacherZero/legal" className={styles.legalLink}>Legal Information</Link>
+        </div>
       </footer>
     </>
   );

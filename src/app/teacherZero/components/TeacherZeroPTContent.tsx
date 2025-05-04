@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-// import { Card, Logo } from "@/once-ui/components"; // Card and Logo not used directly here
+import Link from "next/link";
 import styles from "../page.module.scss";
 import { LanguageSwitcher } from "./LanguageSwitcher"; // Import the switcher
 
@@ -518,7 +518,10 @@ export function TeacherZeroContent() {
       </section>
       
       <footer className={styles.footer}>
-        <p>© {new Date().getFullYear()} TeacherZero · Todos os direitos reservados</p>
+        <div>
+          <p>© {new Date().getFullYear()} TeacherZero · Todos os direitos reservados</p>
+          <Link href="/teacherZero/pt/legal" className={styles.legalLink}>Informação Legal</Link>
+        </div>
       </footer>
     </>
   );
