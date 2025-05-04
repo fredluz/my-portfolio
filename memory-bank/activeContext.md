@@ -2,30 +2,32 @@
 
 ## 1. Current Focus
 
-*   Resolving the issue where the `/teacherZero` route renders the application's custom 404 page (`not-found.tsx`) instead of the intended landing page content.
+*   Finalizing Minimal Viable Legal Compliance (MVLC) pages by inserting drafted text.
 
 ## 2. Recent Changes
 
-*   Created `memory-bank/currentTask.md` to track the TeacherZero integration task.
-*   Renamed `src/app/teacherzero` to `src/app/teacherZero` to match the desired URL casing.
-*   Stopped the dev server, cleared the `.next` cache, and restarted the server to resolve build conflicts caused by the rename on a case-insensitive filesystem.
-*   Analyzed `src/app/teacherZero/page.tsx` (found OK).
-*   Analyzed `src/app/teacherZero/layout.tsx` (found and fixed incorrect `<html>`/`<body>` tags).
-*   Analyzed `src/app/layout.tsx` (identified `<RouteGuard>` as potentially relevant).
-*   Analyzed `src/components/RouteGuard.tsx` (identified it as the cause of the 404 rendering).
-*   Analyzed `src/app/resources/index.ts` and `src/app/resources/config.js` (located the `routes` object).
-*   **Fix Applied:** Added `"/teacherZero": true` to the `routes` object in `src/app/resources/config.js` to allow `RouteGuard` to permit access.
+*   Created legal compliance pages with placeholder content:
+    - `src/app/legal/privacy-policy/page.tsx` (EN)
+    - `src/app/legal/privacy-policy/pt/page.tsx` (PT)
+    - `src/app/legal/terms-conditions/page.tsx` (EN)
+    - `src/app/legal/terms-conditions/pt/page.tsx` (PT)
+*   Added links between EN/PT versions within each page.
+*   Updated `src/app/resources/config.js` to allow access to all four new legal routes.
+*   Updated `src/components/Footer.tsx` to include dynamic links to the legal pages, switching between EN/PT based on the current path.
+*   **Inserted drafted legal text (EN and PT) into the four respective pages, including user-provided contact details and jurisdiction.** (Requires legal review by user).
 
 ## 3. Next Steps
 
-*   Ask the user to verify if `http://localhost:3000/teacherZero` now renders the correct landing page content.
-*   If successful, conclude the task. If not, further investigation is needed.
+*   Confirm that all four legal pages render with the inserted text.
+*   Confirm that footer links work correctly.
+*   Remind user that the inserted text (especially PT translation) requires legal review.
+*   Update `currentTask.md` to reflect completion of MVLC text insertion.
 
 ## 4. Active Decisions & Considerations
 
-*   Prioritizing analysis of configuration and resource files (`config.js`, `content.js`) as they seem central to customization based on file names.
-*   Need to confirm the exact styling mechanisms (SCSS Modules confirmed, No Tailwind, `once-ui` specifics are key).
-*   Theming relies heavily on `data-*` attributes set in `layout.tsx` based on `config.js`.
+*   Used subdirectory-based localization (`/pt`) for legal pages, matching the TeacherZero and site-wide pattern.
+*   Footer links dynamically detect locale using the current path.
+*   Placeholder content is clearly marked for future legal text insertion.
 
 ## 5. Learnings & Insights
 

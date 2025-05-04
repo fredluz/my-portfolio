@@ -1,25 +1,31 @@
-# Current Task: TeacherZero Landing Page Integration
+# Current Task: Minimal Viable Legal Compliance (MVLC) Pages
 
 ## Objective
 
-Integrate the TeacherZero product landing page into the existing portfolio website.
+Implement Privacy Policy and Terms & Conditions pages with English and Portuguese localization, drafted text, and clear footer links.
 
 ## Requirements
 
-1.  **Fix 404 Error:** Resolve the issue where accessing `/teacherZero` renders the application's custom 404 page (`not-found.tsx`) despite the route existing and returning a 200 status code.
-2.  **Set URL:** Ensure the landing page is accessible specifically at the URL `http://localhost:3000/teacherZero` (with an uppercase 'Z').
+1.  Create four pages:
+    - `/legal/privacy-policy` (EN)
+    - `/legal/privacy-policy/pt` (PT)
+    - `/legal/terms-conditions` (EN)
+    - `/legal/terms-conditions/pt` (PT)
+2.  Each page should have drafted legal text (based on user requirements) and a link to its counterpart language version.
+3.  Update `src/app/resources/config.js` to allow access to all four routes.
+4.  Update `src/components/Footer.tsx` to include dynamic links to the legal pages, switching between EN/PT based on the current path.
+5.  Update Memory Bank documentation.
 
 ## Current Status
 
-*   The necessary page components (`src/app/teacherZero/page.tsx`, `layout.tsx`, `page.module.scss`) exist.
-*   The directory was renamed to `src/app/teacherZero`.
-*   Initial build errors after renaming were resolved by clearing the `.next` cache.
-*   The server returns 200 OK for `/teacherZero`, but renders the custom `not-found.tsx` page.
-*   Analysis revealed the `src/components/RouteGuard.tsx` component was blocking the route because `/teacherZero` was not listed in the `routes` object in `src/app/resources/config.js`.
-*   **Fix Applied:** Added `"/teacherZero": true` to the `routes` object in `src/app/resources/config.js`.
+*   All four legal pages have been created.
+*   Drafted legal text (EN and PT machine translation) inserted into respective pages, including user-provided contact details and jurisdiction.
+*   `src/app/resources/config.js` updated to allow access to all four legal routes.
+*   Footer updated to include dynamic links to legal pages, switching between EN/PT.
+*   `activeContext.md` updated to reflect this work.
 
-## Next Steps (Verification)
+## Next Steps
 
-1.  Verify if the TeacherZero landing page now renders correctly at `http://localhost:3000/teacherZero`.
-2.  Update `activeContext.md`.
-3.  If successful, conclude the task. If not, further investigation is needed.
+1.  **User Verification:** User needs to verify the pages render correctly and the links work.
+2.  **Legal Review:** User **must** get the drafted text (especially PT translation) reviewed by a legal professional.
+3.  Task complete.

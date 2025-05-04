@@ -442,7 +442,7 @@ export function TeacherZeroENContent() {
             <div className={styles.creatorInfo}>
               <p>
                 TeacherZero started with a conversation with a teacher friend and my deep gratitude
-                for the educators who shaped my path. I'm Fred Luz, a developer focused on building AI
+                for the educators who shaped my path. I'm Fred Luz, a developer from Portugal, focused on building AI
                 for real people, not just corporate metrics.
               </p>
               <p>
@@ -497,8 +497,8 @@ export function TeacherZeroENContent() {
         <div className={styles.sectionContainer}>
           <h2>Exclusive Program: Join Us</h2>
           <p>
-            TeacherZero is in Advanced Beta. We've already validated its
-            potential to transform educators' workflows. <strong> But we want to go further.</strong>
+            TeacherZero is launching it's Beta program. We've already validated its
+            potential to save time with assessment creation. <strong> But we want to go further.</strong>
           </p>
           <div className={styles.betaSignup}>
             <h3>Pioneer the Change in Education</h3>

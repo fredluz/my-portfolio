@@ -1,9 +1,22 @@
 import { Flex, IconButton, SmartLink, Text } from "@/once-ui/components";
 import { person, social } from "@/app/resources/content";
 import styles from "./Footer.module.scss";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  // Determine if we're in the Portuguese locale
+  let pathname = "";
+  if (typeof window !== "undefined") {
+    pathname = window.location.pathname;
+  }
+  const isPt =
+    pathname.endsWith("/pt") ||
+    pathname.includes("/pt/") ||
+    pathname === "/pt";
+  const privacyLink = `/legal/privacy-policy${isPt ? "/pt" : ""}`;
+  const termsLink = `/legal/terms-conditions${isPt ? "/pt" : ""}`;
 
   return (
     <Flex
@@ -52,6 +65,17 @@ export const Footer = () => {
               ),
           )}
         </Flex>
+      </Flex>
+      <Flex
+        maxWidth="m"
+        paddingY="4"
+        paddingX="16"
+        gap="16"
+        horizontal="center"
+        vertical="center"
+      >
+        <Link href={privacyLink}>Privacy Policy / Política de Privacidade</Link>
+        <Link href={termsLink}>Terms & Conditions / Termos e Condições</Link>
       </Flex>
       <Flex height="80" show="s"></Flex>
     </Flex>

@@ -7,6 +7,10 @@ const routes = {
   "/blog": false,
   "/contact": true,
   "/teacherZero": true, // Enable the TeacherZero landing page route
+  "/legal/privacy-policy": true,
+  "/legal/privacy-policy/pt": true,
+  "/legal/terms-conditions": true,
+  "/legal/terms-conditions/pt": true,
 };
 
 // Enable password protection on selected routes
