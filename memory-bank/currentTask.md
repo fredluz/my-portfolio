@@ -1,31 +1,22 @@
-# Current Task: Minimal Viable Legal Compliance (MVLC) Pages
+# Current Task: Klaviyo Integration
 
 ## Objective
 
-Implement Privacy Policy and Terms & Conditions pages with English and Portuguese localization, drafted text, and clear footer links.
+Integrate Klaviyo form and tracking script into the TeacherZero English landing page.
 
 ## Requirements
 
-1.  Create four pages:
-    - `/legal/privacy-policy` (EN)
-    - `/legal/privacy-policy/pt` (PT)
-    - `/legal/terms-conditions` (EN)
-    - `/legal/terms-conditions/pt` (PT)
-2.  Each page should have drafted legal text (based on user requirements) and a link to its counterpart language version.
-3.  Update `src/app/resources/config.js` to allow access to all four routes.
-4.  Update `src/components/Footer.tsx` to include dynamic links to the legal pages, switching between EN/PT based on the current path.
-5.  Update Memory Bank documentation.
+1.  Replace the existing Beta signup form (Google Form link) in `src/app/teacherZero/components/TeacherZeroENContent.tsx` with the Klaviyo form embed code: `<div class="klaviyo-form-Tv7V5D"></div>`.
+2.  Add the Klaviyo onsite JavaScript snippet `<script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VdCij5'></script>` to the main site template (`src/app/layout.tsx`) before the closing `</body>` tag equivalent.
 
 ## Current Status
 
-*   All four legal pages have been created.
-*   Drafted legal text (EN and PT machine translation) inserted into respective pages, including user-provided contact details and jurisdiction.
-*   `src/app/resources/config.js` updated to allow access to all four legal routes.
-*   Footer updated to include dynamic links to legal pages, switching between EN/PT.
-*   `activeContext.md` updated to reflect this work.
+*   Klaviyo script added to `src/app/layout.tsx`.
+*   Google Form link in `src/app/teacherZero/components/TeacherZeroENContent.tsx` replaced with the Klaviyo form div.
 
 ## Next Steps
 
-1.  **User Verification:** User needs to verify the pages render correctly and the links work.
-2.  **Legal Review:** User **must** get the drafted text (especially PT translation) reviewed by a legal professional.
+1.  Update `activeContext.md`.
+2.  Verify the changes in the browser.
 3.  Task complete.
+new form

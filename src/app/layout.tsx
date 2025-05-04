@@ -103,6 +103,8 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           {children}
           <SpeedInsights/>
           <Analytics />
+          {/* Klaviyo Onsite Script */}
+          <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VdCij5'></script>
         </Column>
       </ToastProvider>
     </Flex>

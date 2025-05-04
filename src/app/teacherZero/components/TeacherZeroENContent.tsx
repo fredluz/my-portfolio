@@ -501,19 +501,9 @@ export function TeacherZeroENContent() {
             potential to save time with assessment creation. <strong> But we want to go further.</strong>
           </p>
           <div className={styles.betaSignup}>
-            <h3>Pioneer the Change in Education</h3>
-            <p>
-              We're inviting <strong>99</strong> individual educators to our
-              Beta Partner Program. Apply now and get early
-              access to the future of assessment.
-            </p>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSea_BzP21b7JB2ekIgCU--FN-qkrcLRQkoc71VIs02ctv-TRg/viewform?usp=dialog"
-              className={styles.ctaButton}
-            >
-              Fill Out Form to Get Beta Access
-            </a>
-          </div>
+              {/* Klaviyo Form Embed */}
+              <div className="klaviyo-form-Tv7V5D"></div>
+            </div>
         </div>
       </section>
 
