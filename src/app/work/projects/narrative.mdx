@@ -9,7 +9,7 @@ images:
   - "/images/projects/narrative/chat taskgen.mp4"
   - "/images/projects/narrative/quest_list.png"
   - "/images/projects/narrative/journal.png"
- - "/images/projects/narrative/kanban_tasklist.png"
+  - "/images/projects/narrative/kanban_tasklist.png"
 team:
   - name: Frederico Luz
     role: Creator
@@ -57,7 +57,7 @@ Narrative replaces shallow gamification with *Narrativization*
 *   **AI Narrators:** Choose an AI persona (currently "inspired" by fictional characters) for motivation styled to your preference, powered by DeepSeek's writing ability. The Narrator creates an engaging personal story around your goals and daily life. It acts as a sort of sidekick, able to encourage and motivate, but also analyze your actions and choices.* 
 *  **The Quest Log: Turning Your Journal into a Journey:** Inspired by RPGs like *Cyberpunk 2077* and *The Witcher*, long-term goals aren't just items on a list, they're **Quests**. When you add a new Quest (through braindumping your goals and objectives with voice transcription), the Narrator generates an engaging, adventurous description for it. This reframes your goals as ambitions, combats the monotony of chipping away at large goals, and helps you see your own life through a more creative, narrativized lens. Your tasks are linked to these overarching quests, giving immediate actions a sense of greater purpose within your personal saga.
 
-![Narrative Quest Log UI](/images/projects/narrative/quest_list.png)
+<img src="/images/projects/narrative/quest_list.png" alt="Narrative Quest Log UI" />
 *   **Long Term Vision:** The Narrator keeps track of your mood and productivity as you log new entries, which lets you look at your life not just on a day-to-day basis, but on a larger timescale.
 
 > **Design Insight:** Taps into deeper human drivers for motivation than simple reward mechanics, leveraging the chosen LLM's creative capabilities.
@@ -84,7 +84,7 @@ The core of Narrative isn't just LLM integration. The Narrator's a carefully des
   Sorry, your browser doesn't support embedded videos.
 </video>
 
-![Task List Example](/images/projects/narrative/kanban_tasklist.png)
+<img src="/images/projects/narrative/kanban_tasklist.png" alt="Task List Example" />
 
 > **Technical Insight:** This multi-step, multi-LLM agent architecture separates concerns effectively. Flash handles the high-frequency, low-complexity RAG and rule-based task logic quickly and cheaply. DeepSeek focuses on high-quality writing where emotional engagement matters. The automated task updates via Flash's database interaction are central to the low-friction design and demonstrate practical agent tool use.
 
@@ -97,7 +97,7 @@ Narrative consolidates daily Checkups and uses DeepSeek to provide unique insigh
 *   **Timeline Analysis:** Compares daily entries with past data, highlighting trends and progress.
 *   **Strategic Analysis:** Performs a SWOT-like assessment based on the day's content related to your defined "Quests."
 
-![End of Day Analysis Example](/images/projects/narrative/journal.png)
+<img src="/images/projects/narrative/journal.png" alt="End of Day Analysis Example" />
 
 > **Design Insight:** Provides actionable self-reflection without requiring manual review of vast amounts of text, leveraging the LLM's analytical capabilities on curated data.
 
