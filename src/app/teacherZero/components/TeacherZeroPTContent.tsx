@@ -400,7 +400,7 @@ export function TeacherZeroContent() {
           </div>
         </div>
          <p className={styles.featureSubDetails}>
-            O TeacherZero é mais que uma interface - é um <em><strong>co-piloto pedagógico</strong></em> que entende o contexto educacional e te ajuda a criar questões que verdadeiramente desafiam e desenvolvem o conhecimento dos alunos.
+            O TeacherZero é mais que uma interface - é um <strong><em>co-piloto pedagógico</em></strong> que entende o contexto educacional e te ajuda a criar questões que verdadeiramente desafiam e desenvolvem o conhecimento dos alunos.
           </p>
           
       </section>
