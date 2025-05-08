@@ -402,8 +402,8 @@ export function TeacherZeroENContent() {
           </div>
         </div>
         <p className={styles.featureSubDetails}>
-            TeacherZero is more than an interface - it's a <strong>pedagogical co-pilot</strong> that understands your teaching context and helps you craft questions that truly challenge your students and develop their knowledge.
-          </p>
+            TeacherZero is more than an interface - it's a <strong><em>pedagogical co-pilot</em></strong> that understands your teaching context and helps you craft questions that truly challenge your students and develop their knowledge.
+        </p>
       </section>
 
       {/* Features Section */}
@@ -436,6 +436,7 @@ export function TeacherZeroENContent() {
       </section>
 
       {/* About Section */}
+      {/*
       <section className={`${styles.section} ${styles.about} ${styles.fadeIn}`}>
         <div className={styles.sectionContainer}>
           <h2>Built By Gratitude</h2>
@@ -455,6 +456,7 @@ export function TeacherZeroENContent() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Future Vision */}
       <section className={`${styles.section} ${styles.future} ${styles.fadeIn}`}>
