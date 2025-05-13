@@ -18,6 +18,14 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 308)
   }
 
+  // --- YCombinator Product Path ---
+  const canonicalYCPath = '/products/YCombinator'
+  if (lowerPathname === canonicalYCPath.toLowerCase() && pathname !== canonicalYCPath) {
+    const url = request.nextUrl.clone()
+    url.pathname = canonicalYCPath
+    return NextResponse.redirect(url, 308)
+  }
+
   // Allow the request to continue if no redirect is needed
   return NextResponse.next()
 }
@@ -26,6 +34,7 @@ export function middleware(request: NextRequest) {
 // This ensures the middleware doesn't run unnecessarily on every request.
 export const config = {
   matcher: [
+    // TeacherZero paths
     '/teacherzero', 
     '/Teacherzero', 
     '/TEACHERZERO', 
@@ -35,6 +44,16 @@ export const config = {
     // although the logic above handles any case variation.
     // Including the canonical path '/teacherZero' in the matcher is optional, 
     // but doesn't hurt, as the logic prevents redirecting if it's already correct.
-    '/teacherZero' 
+    '/teacherZero',
+
+    // YCombinator Product paths
+    // Ensure middleware runs for these paths to normalize them:
+    '/products/ycombinator',
+    '/products/Ycombinator', // Mixed case for YCombinator
+    '/products/yCombinator', // Mixed case for YCombinator
+    '/PRODUCTS/YCOMBINATOR', // All caps
+    '/Products/YCombinator', // Mixed case for products
+    '/products/YCOMBINATOR', // All caps for YCombinator
+    '/products/YCombinator'  // Canonical path
   ],
 }
