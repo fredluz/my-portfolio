@@ -41,7 +41,6 @@ const YCombinatorPage = () => {
               <span className={styles.downloadIcon}>↓</span>
               Download teacherZero
             </a>
-            <p className={styles.versionInfo}>Version 1.0.2 • Updated July 2023</p>
           </div>
         </div>
       </div>

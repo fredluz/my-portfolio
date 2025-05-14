@@ -42,9 +42,9 @@
 }
 
 .contentGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .productInfo h2 {
@@ -81,79 +81,36 @@
 
 .downloadSection {
   margin-top: 40px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  border: 1px solid #eaeaea;
   text-align: center;
 }
 
 .downloadButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   background-color: #0070f3;
   color: white;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-size: 18px;
+  padding: 24px;
+  border-radius: 10px;
+  font-size: 24px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(0, 118, 255, 0.39);
+  box-shadow: 0 8px 20px rgba(0, 118, 255, 0.3);
 }
 
 .downloadButton:hover {
   background-color: #0060df;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 118, 255, 0.4);
 }
 
 .downloadIcon {
-  margin-right: 10px;
-  font-size: 20px;
-}
-
-.versionInfo {
-  font-size: 14px;
-  color: #666;
-  margin-top: 10px;
-}
-
-.productVisuals {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.productImageContainer {
-  width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.placeholderImage {
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-  height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  color: #666;
-  border: 1px dashed #999;
+  margin-right: 12px;
+  font-size: 24px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .contentGrid {
-    grid-template-columns: 1fr;
-  }
-  
   .productHeader h1 {
     font-size: 36px;
-  }
-  
-  .placeholderImage {
-    height: 250px;
   }
 }
