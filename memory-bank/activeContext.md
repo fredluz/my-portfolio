@@ -2,17 +2,17 @@
 
 ## 1. Current Focus
 
-*   Finalizing the YC application product link page, ensuring URL case-insensitivity.
+*   Completed YC application product link page: created page, ensured URL case-insensitivity, and updated product link.
 
 ## 2. Recent Changes
 
-*   **YC Product Page URL Case-Insensitivity:**
+*   **YC Product Page Link Update:**
+    *   Updated the `href` in `src/app/products/YCombinator/page.tsx` to point to the correct Google Drive URL.
+*   **YC Product Page URL Case-Insensitivity (Completed Previously):**
     *   Updated `src/middleware.ts` to normalize the URL for `/products/YCombinator`, redirecting any case variations to the canonical path.
 *   **YC Product Page Creation (Completed Previously):**
     *   Created `src/app/products/YCombinator/page.tsx`.
-    *   The page includes a heading "Product for YCombinator" and a link "download teacherZero" with a placeholder href.
-*   **Klaviyo Integration (Completed Previously):**
-    *   Added Klaviyo onsite JavaScript snippet to `src/app/layout.tsx`.
+    *   The page includes a heading "Product for YCombinator" and a link "download teacherZero".
     *   Replaced the Google Form link in the Beta signup section of `src/app/teacherZero/components/TeacherZeroENContent.tsx` with the Klaviyo form embed div (`<div class="klaviyo-form-Tv7V5D"></div>`).
 *   **MVLC Pages (Completed Previously):**
     *   Created legal compliance pages (`privacy-policy`, `terms-conditions`) with EN/PT versions.
